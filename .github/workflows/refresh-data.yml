@@ -6,9 +6,10 @@ on:
     - cron: '0 8 1 1,4,7,10 *'
   workflow_dispatch:
     inputs:
-      tsv_path:
-        description: 'Path to Calflora WGH TSV export (leave blank to use API or refresh photos only)'
+      shape_id:
+        description: 'Calflora saved polygon shape id'
         required: false
+        default: 'rs3899'
 
 permissions:
   contents: write
@@ -29,18 +30,9 @@ jobs:
           python-version: '3.12'
 
       - name: Run data collection
-        env:
-          CALFLORA_API_KEY: ${{ secrets.CALFLORA_API_KEY }}
         run: |
-          TSV_ARG=""
-          if [ -n "${{ github.event.inputs.tsv_path }}" ]; then
-            TSV_ARG="--tsv ${{ github.event.inputs.tsv_path }}"
-          fi
-
           python scripts/collect_data.py \
-            $TSV_ARG \
-            --calflora-key "$CALFLORA_API_KEY" \
-            --shape-id rs3899 \
+            --shape-id "${{ github.event.inputs.shape_id || 'rs3899' }}" \
             --existing data/plants.json \
             --output data/plants.json
 

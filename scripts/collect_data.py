@@ -1,59 +1,189 @@
 #!/usr/bin/env python3
 """
-collect_data.py — Refresh whatsblooming plant data.
+collect_data.py — Refresh whatsblooming plant data from Calflora.
 
-Data sources:
-  - Calflora API (Path B, automated): requires --calflora-key and --shape-id
-    Endpoints discovered by inspecting XHR traffic on calflora.org/entry/wgh.html
-    while logged in — update CALFLORA_ENDPOINT below once confirmed.
-  - Calflora WGH text export (Path A, fallback): pass --tsv path/to/export.tsv
-    Download from calflora.org WGH tool → Results Format: Text → Export.
+Primary data source (Path W — automated, no API key needed):
+  The Calflora "What Grows Here" (WGH) tool at
+  https://www.calflora.org/entry/wgh.html drives a GWT-RPC endpoint at
+  https://www.calflora.org/app/userdata. A single POST for a saved polygon
+  (shape id, e.g. rs3899) returns every plant recorded in that area, with
+  scientific + common name, family, growth habit, native status, bloom
+  start/end months, up to 3 photos (with attributions), and the Calflora
+  plant id. This script decodes that GWT-RPC response directly.
 
-Photos are fetched from iNaturalist (no auth required).
+Fallback (Path A): a Calflora WGH tab-delimited text export via --tsv.
+
+Photos come from Calflora's own photo set (attribution preserved). No
+iNaturalist lookups are needed, so a full refresh is one HTTP request.
 
 Usage:
   python scripts/collect_data.py [options]
 
-  --tsv PATH           Path to Calflora WGH tab-delimited export (Path A)
-  --calflora-key KEY   Calflora API key (Path B); reads CALFLORA_API_KEY env var if omitted
-  --shape-id ID        Calflora saved polygon shape ID (default: rs3899)
-  --output PATH        Where to write plants.json (default: data/plants.json)
-  --existing PATH      Existing plants.json to merge/preserve photos from
-  --dry-run            Print result to stdout, don't write file
+  --shape-id ID    Calflora saved polygon shape id (default: rs3899)
+  --tsv PATH       Use a Calflora WGH text export instead of the live endpoint
+  --all            Include non-native plants too (default: CA natives only)
+  --output PATH    Where to write plants.json (default: data/plants.json)
+  --existing PATH  Existing plants.json to preserve photos from when missing
+  --raw PATH       Save the raw GWT-RPC response to PATH (debugging)
+  --dry-run        Print result to stdout, don't write file
 """
+
+from __future__ import annotations
 
 import argparse
 import json
-import os
+import re
 import sys
-import time
 import urllib.parse
 import urllib.request
 from pathlib import Path
 
-# ── Calflora API endpoint — update once discovered via DevTools inspection ──
-# To discover: open https://www.calflora.org/entry/wgh.html in Chrome,
-# open DevTools → Network → XHR/Fetch, run a WGH search for shape rs3899,
-# find the JSON-returning request and copy its URL here.
-CALFLORA_ENDPOINT = None  # e.g. "https://api.calflora.org/wgh"
+# ── Calflora WGH (GWT-RPC) endpoint ──────────────────────────────────────────
+# This is the request the WGH tool fires when you run a search for a saved
+# polygon. The strong-name hash and module/permutation headers are tied to
+# Calflora's currently deployed GWT build; if the endpoint starts returning an
+# error instead of "//OK[...]", re-capture these from the browser Network tab
+# (XHR -> /app/userdata) on https://www.calflora.org/entry/wgh.html.
+WGH_ENDPOINT = "https://www.calflora.org/app/userdata"
+WGH_STRONGNAME = "CCD946811B7108DD7F57B9B1BDC37CBB"
+WGH_MODULE_BASE = "https://www.calflora.org/entry/com.gmap3.Wgh3J/"
+WGH_PERMUTATION = "61E52EB5745FD49C921AA4BD9FC33FBE"
 
-INAT_BASE = "https://api.inaturalist.org/v1"
-INAT_PLACE_CA = 28  # iNaturalist place_id for California
-HEADERS = {"User-Agent": "whatsblooming/1.0 (github.com/jacob/whatsblooming)"}
+# GWT-RPC request payload. {shape_id} is the only thing we vary; every other
+# token indexes the inline string table by position, so swapping the rid value
+# string is safe. minc|10 = minimum 10 records; nstatus|2 filters at the query
+# level too, but we also filter in code so the meaning is explicit.
+WGH_PAYLOAD_TEMPLATE = (
+    "7|0|18|https://www.calflora.org/entry/com.gmap3.Wgh3J/|"
+    "CCD946811B7108DD7F57B9B1BDC37CBB|"
+    "com.cfapp.client.wentry.UserDataService|oneList|"
+    "java.lang.String/2004016611|java.util.HashMap/1797211028|"
+    "wgh|129411|dateAfter|1920-01-01|rid|{shape_id}|nstatus|2|grez|8|minc|10|"
+    "1|2|3|4|3|5|5|6|7|8|6|5|5|9|5|10|5|11|5|12|5|13|5|14|5|15|5|16|5|17|5|18|"
+)
+
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+                  "(KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "Content-Type": "text/x-gwt-rpc; charset=UTF-8",
+    "Origin": "https://www.calflora.org",
+    "Referer": "https://www.calflora.org/entry/wgh.html",
+    "X-GWT-Module-Base": WGH_MODULE_BASE,
+    "X-GWT-Permutation": WGH_PERMUTATION,
+    "Cookie": "cflogin=login",
+}
+
+# Field positions inside each decoded String[] record returned by WGH.
+F_SCI, F_COMMON, F_HABIT, F_NSTATUS, F_FAMILY = 0, 1, 2, 3, 4
+F_BLOOM_START, F_BLOOM_END = 6, 7
+F_PHOTO = (8, 10, 12)          # photo url positions
+F_PHOTO_ATTR = (9, 11, 13)     # matching attribution positions
+F_ID, F_RELATION = 17, 18      # calflora id; None/"parent"/"child" taxonomy rel
+NATIVE_CODE = "2"
 
 
-# ─────────────────────────── Calflora helpers ───────────────────────────────
+# ─────────────────────────── Calflora WGH (GWT-RPC) ──────────────────────────
+
+def fetch_wgh_raw(shape_id: str) -> str:
+    """POST the WGH GWT-RPC request for a saved polygon, return the raw body."""
+    payload = WGH_PAYLOAD_TEMPLATE.format(shape_id=shape_id)
+    req = urllib.request.Request(
+        WGH_ENDPOINT, data=payload.encode("utf-8"), headers=HEADERS, method="POST"
+    )
+    with urllib.request.urlopen(req, timeout=60) as r:
+        return r.read().decode("utf-8")
+
+
+def decode_gwt_records(raw: str) -> list[list]:
+    """
+    Decode a GWT-RPC '//OK[...]' response into a list of String[] records.
+
+    The body is JSON once the GWT \\xHH escapes are rewritten to \\u00HH. It is
+    [<int tokens...>, [<string table>], flags, version]. GWT reads tokens from
+    the tail, so we reverse them. The top object is an ArrayList of String[];
+    a string token of 0 means null, otherwise it is a 1-based index into the
+    string table.
+    """
+    raw = raw.strip()
+    if not raw.startswith("//OK"):
+        raise RuntimeError(f"Unexpected WGH response (not //OK): {raw[:200]!r}")
+    arr = json.loads(re.sub(r"\\x([0-9a-fA-F]{2})", r"\\u00\1", raw[4:]))
+
+    stab_i = next(i for i, el in enumerate(arr) if isinstance(el, list))
+    strtab = arr[stab_i]
+    stream = arr[:stab_i][::-1]
+    pos = 0
+
+    def read_int() -> int:
+        nonlocal pos
+        v = stream[pos]
+        pos += 1
+        return v
+
+    def read_str():
+        i = read_int()
+        return None if i == 0 else strtab[i - 1]
+
+    top = strtab[read_int() - 1]
+    if not top.startswith("java.util.ArrayList"):
+        raise RuntimeError(f"Expected ArrayList at top of response, got {top!r}")
+
+    size = read_int()
+    records = []
+    for _ in range(size):
+        read_int()                       # element type ref ([Ljava.lang.String;)
+        n = read_int()                   # array length
+        records.append([read_str() for _ in range(n)])
+    return records
+
+
+def expand_bloom_months(start, end) -> list[int]:
+    """'3','5' -> [3,4,5]; handles wraparound like '11','2' -> [11,12,1,2]."""
+    if not start or not end:
+        return []
+    a, b = int(start), int(end)
+    if not (1 <= a <= 12 and 1 <= b <= 12):
+        return []
+    return list(range(a, b + 1)) if a <= b else list(range(a, 13)) + list(range(1, b + 1))
+
+
+def records_to_plants(records: list[list], natives_only: bool) -> list[dict]:
+    """Map decoded WGH String[] records to plant dicts (pre-enrichment)."""
+    plants = []
+    for r in records:
+        if len(r) <= F_RELATION:
+            continue
+        if natives_only and r[F_NSTATUS] != NATIVE_CODE:
+            continue
+        sci = (r[F_SCI] or "").strip()
+        if not sci:
+            continue
+
+        photo_url = photo_attr = None
+        for u_pos, a_pos in zip(F_PHOTO, F_PHOTO_ATTR):
+            if r[u_pos]:
+                photo_url = r[u_pos]
+                photo_attr = r[a_pos]
+                break
+
+        plants.append({
+            "scientific_name": sci,
+            "common_name": (r[F_COMMON] or "").strip(),
+            "family": r[F_FAMILY],
+            "growth_habit": r[F_HABIT],
+            "native": r[F_NSTATUS] == NATIVE_CODE,
+            "calflora_id": r[F_ID],
+            "bloom_months": expand_bloom_months(r[F_BLOOM_START], r[F_BLOOM_END]),
+            "photo_url": photo_url,
+            "photo_attribution": photo_attr,
+        })
+    return plants
+
+
+# ─────────────────────────── TSV fallback (Path A) ───────────────────────────
 
 def load_from_tsv(tsv_path: str) -> list[dict]:
-    """
-    Parse a Calflora WGH tab-delimited text export.
-
-    Expected column patterns (Calflora may use either):
-      Pattern A: columns named Jan, Feb, Mar, ... Dec with 'x' for blooming months
-      Pattern B: a single 'Bloom Months' column with comma-separated month names/numbers
-
-    Returns list of dicts with keys: scientific_name, common_name, bloom_months (list[int])
-    """
+    """Parse a Calflora WGH tab-delimited text export (fallback path)."""
     import csv
 
     MONTH_ABBRS = {
@@ -62,43 +192,29 @@ def load_from_tsv(tsv_path: str) -> list[dict]:
     }
     MONTH_NAMES = {
         "january": 1, "february": 2, "march": 3, "april": 4, "may": 5, "june": 6,
-        "july": 7, "august": 8, "september": 9, "october": 10, "november": 11, "december": 12,
+        "july": 7, "august": 8, "september": 9, "october": 10,
+        "november": 11, "december": 12,
     }
 
     plants = []
     with open(tsv_path, newline="", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f, delimiter="\t")
         headers_lower = [h.lower().strip() for h in (reader.fieldnames or [])]
-
-        # Detect which bloom column pattern is present
         month_cols = [h for h in headers_lower if h[:3] in MONTH_ABBRS]
         has_bloom_col = "bloom months" in headers_lower or "bloom_months" in headers_lower
 
         for row in reader:
             row_lower = {k.lower().strip(): v for k, v in row.items()}
-
-            # Detect scientific name column (Calflora uses "Taxon" or "Scientific Name")
-            sci = (
-                row_lower.get("taxon")
-                or row_lower.get("scientific name")
-                or row_lower.get("scientific_name")
-                or ""
-            ).strip()
-            common = (
-                row_lower.get("common name")
-                or row_lower.get("common_name")
-                or ""
-            ).strip()
-
+            sci = (row_lower.get("taxon") or row_lower.get("scientific name")
+                   or row_lower.get("scientific_name") or "").strip()
+            common = (row_lower.get("common name") or row_lower.get("common_name") or "").strip()
             if not sci:
                 continue
 
             bloom_months: list[int] = []
-
             if month_cols:
                 for col in month_cols:
-                    val = row_lower.get(col, "").strip().lower()
-                    if val in ("x", "1", "yes", "true", "bloom"):
+                    if row_lower.get(col, "").strip().lower() in ("x", "1", "yes", "true", "bloom"):
                         bloom_months.append(MONTH_ABBRS[col[:3]])
             elif has_bloom_col:
                 raw = (row_lower.get("bloom months") or row_lower.get("bloom_months") or "").strip()
@@ -111,138 +227,28 @@ def load_from_tsv(tsv_path: str) -> list[dict]:
                     elif token.isdigit():
                         bloom_months.append(int(token))
 
-            bloom_months = sorted(set(bloom_months))
             plants.append({
                 "scientific_name": sci,
                 "common_name": common,
-                "bloom_months": bloom_months,
+                "family": None,
+                "growth_habit": None,
+                "native": True,
+                "calflora_id": None,
+                "bloom_months": sorted(set(bloom_months)),
+                "photo_url": None,
+                "photo_attribution": None,
             })
 
     print(f"Loaded {len(plants)} plants from TSV: {tsv_path}", file=sys.stderr)
     return plants
 
 
-def load_from_calflora_api(api_key: str, shape_id: str) -> list[dict]:
-    """
-    Fetch plant list from Calflora API for the given polygon shape.
-
-    NOTE: CALFLORA_ENDPOINT must be set at the top of this file.
-    Discover it by inspecting XHR requests from calflora.org/entry/wgh.html.
-    """
-    if not CALFLORA_ENDPOINT:
-        raise RuntimeError(
-            "CALFLORA_ENDPOINT is not configured. "
-            "Discover the endpoint by inspecting network traffic on "
-            "https://www.calflora.org/entry/wgh.html in Chrome DevTools "
-            "(Network → XHR/Fetch), run a WGH search for your polygon, "
-            "then set CALFLORA_ENDPOINT at the top of this script."
-        )
-
-    params = urllib.parse.urlencode({
-        "shapeid": shape_id,
-        "nstatus": "CA Native",
-        "fmt": "json",
-    })
-    url = f"{CALFLORA_ENDPOINT}?{params}"
-    headers = {**HEADERS, "Authorization": f"Bearer {api_key}"}
-    req = urllib.request.Request(url, headers=headers)
-
-    with urllib.request.urlopen(req, timeout=30) as r:
-        data = json.loads(r.read())
-
-    # Parse response — field names depend on the actual API response structure.
-    # Update the field mappings below to match what Calflora returns.
-    plants = []
-    for item in data if isinstance(data, list) else data.get("results", []):
-        sci = item.get("taxon") or item.get("scientific_name") or item.get("name", "")
-        common = item.get("common_name") or item.get("cname", "")
-
-        # Bloom months may come as a list of ints, a bitmask, or month abbreviations.
-        # Update this parsing to match the actual response format.
-        raw_bloom = item.get("bloom_months") or item.get("bloom") or []
-        if isinstance(raw_bloom, list):
-            bloom_months = sorted(set(int(m) for m in raw_bloom if str(m).isdigit()))
-        else:
-            bloom_months = []
-
-        if sci:
-            plants.append({
-                "scientific_name": sci.strip(),
-                "common_name": common.strip(),
-                "bloom_months": bloom_months,
-            })
-
-    print(f"Loaded {len(plants)} plants from Calflora API (shape: {shape_id})", file=sys.stderr)
-    return plants
-
-
-# ─────────────────────────── iNaturalist helpers ─────────────────────────────
-
-def _inat_get(path: str) -> dict:
-    url = f"{INAT_BASE}{path}"
-    req = urllib.request.Request(url, headers=HEADERS)
-    with urllib.request.urlopen(req, timeout=15) as r:
-        return json.loads(r.read())
-
-
-UNUSABLE_LICENSES = {None, "all-rights-reserved"}
-
-
-def _usable_photo(photo: dict) -> dict | None:
-    if photo.get("license_code") in UNUSABLE_LICENSES:
-        return None
-    raw_url = photo.get("medium_url") or photo.get("url", "")
-    photo_url = raw_url.replace("square", "medium") if raw_url else None
-    if not photo_url:
-        return None
-    return {
-        "photo_url": photo_url,
-        "photo_attribution": photo.get("attribution", ""),
-        "photo_license": photo.get("license_code", ""),
-    }
-
-
-def fetch_inat_photo(scientific_name: str) -> dict:
-    """Return {photo_url, photo_attribution, photo_license} or all-None dict."""
-    null_result = {"photo_url": None, "photo_attribution": None, "photo_license": None}
-
-    # Try taxa default_photo (most representative)
-    try:
-        data = _inat_get(f"/taxa?q={urllib.parse.quote(scientific_name)}&rank=species&per_page=5")
-        for result in data.get("results", []):
-            if result.get("name", "").lower() == scientific_name.lower():
-                photo = _usable_photo(result.get("default_photo") or {})
-                if photo:
-                    return photo
-    except Exception as e:
-        print(f"  iNat taxa lookup failed for {scientific_name}: {e}", file=sys.stderr)
-
-    time.sleep(0.3)
-
-    # Fallback: top-voted research-grade observations in California
-    try:
-        path = (
-            f"/observations?taxon_name={urllib.parse.quote(scientific_name)}"
-            f"&place_id={INAT_PLACE_CA}&quality_grade=research"
-            f"&order_by=votes&per_page=10&photos=true"
-        )
-        obs_data = _inat_get(path)
-        for obs in obs_data.get("results", []):
-            for op in obs.get("observation_photos", []):
-                photo = _usable_photo(op.get("photo") or {})
-                if photo:
-                    return photo
-    except Exception as e:
-        print(f"  iNat observations lookup failed for {scientific_name}: {e}", file=sys.stderr)
-
-    return null_result
-
-
 # ─────────────────────────── URL builders ────────────────────────────────────
 
-def make_calflora_url(scientific_name: str) -> str:
-    encoded = urllib.parse.quote(scientific_name)
-    return f"https://www.calflora.org/entry/visnome.html#srch=t&taxon={encoded}"
+def make_calflora_url(plant: dict) -> str:
+    if plant.get("calflora_id"):
+        return f"https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum={plant['calflora_id']}"
+    return f"https://www.calflora.org/entry/visnome.html#srch=t&taxon={urllib.parse.quote(plant['scientific_name'])}"
 
 
 def make_calscape_url(scientific_name: str, common_name: str) -> str:
@@ -253,62 +259,46 @@ def make_calscape_url(scientific_name: str, common_name: str) -> str:
 
 # ─────────────────────────── Main pipeline ───────────────────────────────────
 
-def build_plants(
-    plant_list: list[dict],
-    existing: dict[str, dict],
-) -> list[dict]:
-    """
-    For each plant, enrich with iNaturalist photo and build output record.
-    Preserves existing photo if new iNat lookup returns nothing.
-    """
-    results = []
-    total = len(plant_list)
-    for i, plant in enumerate(plant_list, 1):
-        sci = plant["scientific_name"]
-        common = plant["common_name"]
-        print(f"[{i}/{total}] {common} ({sci})", file=sys.stderr)
+def build_output(plants: list[dict], existing: dict[str, dict]) -> list[dict]:
+    """Finalize records: add link URLs and preserve a prior photo if missing."""
+    out = []
+    for p in plants:
+        sci = p["scientific_name"]
+        common = p["common_name"] or sci  # fall back to scientific name
+        photo_url = p["photo_url"]
+        photo_attr = p["photo_attribution"]
+        if not photo_url and sci in existing:
+            photo_url = existing[sci].get("photo_url")
+            photo_attr = existing[sci].get("photo_attribution")
 
-        photo = fetch_inat_photo(sci)
-
-        # Fall back to existing photo if iNat returned nothing
-        if not photo["photo_url"] and sci in existing:
-            prev = existing[sci]
-            photo = {
-                "photo_url": prev.get("photo_url"),
-                "photo_attribution": prev.get("photo_attribution"),
-                "photo_license": prev.get("photo_license"),
-            }
-            if photo["photo_url"]:
-                print(f"  Kept existing photo", file=sys.stderr)
-
-        record = {
+        out.append({
             "common_name": common,
             "scientific_name": sci,
-            "bloom_months": plant["bloom_months"],
-            "calflora_url": make_calflora_url(sci),
+            "family": p.get("family"),
+            "growth_habit": p.get("growth_habit"),
+            "native": p.get("native", True),
+            "bloom_months": p["bloom_months"],
+            "calflora_url": make_calflora_url(p),
             "calscape_url": make_calscape_url(sci, common),
-            **photo,
-        }
-        results.append(record)
-        time.sleep(0.5)
-
-    results.sort(key=lambda x: x["common_name"])
-    return results
+            "photo_url": photo_url,
+            "photo_attribution": photo_attr,
+        })
+    out.sort(key=lambda x: x["common_name"] or x["scientific_name"])
+    return out
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Refresh whatsblooming plant data")
-    parser.add_argument("--tsv", help="Path to Calflora WGH tab-delimited export (Path A)")
-    parser.add_argument("--calflora-key", default=os.environ.get("CALFLORA_API_KEY"),
-                        help="Calflora API key (Path B); falls back to CALFLORA_API_KEY env var")
-    parser.add_argument("--shape-id", default="rs3899", help="Calflora polygon shape ID")
+    parser = argparse.ArgumentParser(description="Refresh whatsblooming plant data from Calflora")
+    parser.add_argument("--shape-id", default="rs3899", help="Calflora saved polygon shape id")
+    parser.add_argument("--tsv", help="Use a Calflora WGH text export instead of the live endpoint")
+    parser.add_argument("--all", action="store_true", help="Include non-native plants too")
     parser.add_argument("--output", default="data/plants.json", help="Output path")
     parser.add_argument("--existing", default="data/plants.json",
                         help="Existing plants.json for photo preservation")
+    parser.add_argument("--raw", help="Save the raw GWT-RPC response to this path (debugging)")
     parser.add_argument("--dry-run", action="store_true", help="Print JSON, don't write file")
     args = parser.parse_args()
 
-    # Load existing data for photo preservation
     existing: dict[str, dict] = {}
     existing_path = Path(args.existing)
     if existing_path.exists():
@@ -320,45 +310,32 @@ def main() -> None:
         except Exception as e:
             print(f"Warning: could not load existing data: {e}", file=sys.stderr)
 
-    # Phase 1: Load plant list
-    plant_list: list[dict] | None = None
-
     if args.tsv:
-        plant_list = load_from_tsv(args.tsv)
-    elif args.calflora_key:
-        try:
-            plant_list = load_from_calflora_api(args.calflora_key, args.shape_id)
-        except RuntimeError as e:
-            print(f"Calflora API not configured: {e}", file=sys.stderr)
-        except Exception as e:
-            print(f"Calflora API failed: {e}", file=sys.stderr)
-            print("Falling back to existing plant list for photo refresh only.", file=sys.stderr)
+        plants = load_from_tsv(args.tsv)
+    else:
+        print(f"Fetching WGH polygon {args.shape_id} from Calflora...", file=sys.stderr)
+        raw = fetch_wgh_raw(args.shape_id)
+        if args.raw:
+            Path(args.raw).write_text(raw, encoding="utf-8")
+        records = decode_gwt_records(raw)
+        print(f"Decoded {len(records)} records from WGH", file=sys.stderr)
+        plants = records_to_plants(records, natives_only=not args.all)
+        print(f"Kept {len(plants)} plants ({'all' if args.all else 'natives only'})", file=sys.stderr)
 
-    if plant_list is None:
-        if existing:
-            print("No new plant list available — refreshing photos for existing plants only.", file=sys.stderr)
-            plant_list = [
-                {"scientific_name": v["scientific_name"],
-                 "common_name": v["common_name"],
-                 "bloom_months": v["bloom_months"]}
-                for v in existing.values()
-            ]
-        else:
-            print("Error: no --tsv file, no working Calflora API, and no existing data.", file=sys.stderr)
-            sys.exit(1)
+    output = build_output(plants, existing)
+    with_photos = sum(1 for p in output if p["photo_url"])
+    with_bloom = sum(1 for p in output if p["bloom_months"])
+    print(f"Final: {len(output)} plants, {with_photos} with photos, "
+          f"{with_bloom} with bloom months", file=sys.stderr)
 
-    # Phase 2-4: Build enriched records
-    plants = build_plants(plant_list, existing)
-
-    output = json.dumps(plants, indent=2, ensure_ascii=False) + "\n"
-
+    text = json.dumps(output, indent=2, ensure_ascii=False) + "\n"
     if args.dry_run:
-        print(output)
+        print(text)
     else:
         out_path = Path(args.output)
         out_path.parent.mkdir(parents=True, exist_ok=True)
-        out_path.write_text(output, encoding="utf-8")
-        print(f"Wrote {len(plants)} plants to {out_path}", file=sys.stderr)
+        out_path.write_text(text, encoding="utf-8")
+        print(f"Wrote {len(output)} plants to {out_path}", file=sys.stderr)
 
 
 if __name__ == "__main__":
