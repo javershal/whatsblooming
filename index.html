@@ -11,6 +11,21 @@
     <h1>What's Blooming</h1>
     <p class="subtitle">California native wildflowers near Monterey this month</p>
     <p class="month-label" id="current-month"></p>
+    <div class="month-slider">
+      <input type="range" id="month-slider" min="1" max="12" step="1"
+             aria-label="Select month" list="month-ticks">
+      <datalist id="month-ticks">
+        <option value="1"></option><option value="2"></option>
+        <option value="3"></option><option value="4"></option>
+        <option value="5"></option><option value="6"></option>
+        <option value="7"></option><option value="8"></option>
+        <option value="9"></option><option value="10"></option>
+        <option value="11"></option><option value="12"></option>
+      </datalist>
+      <div class="month-scale" aria-hidden="true">
+        <span>Jan</span><span>Apr</span><span>Jul</span><span>Oct</span><span>Dec</span>
+      </div>
+    </div>
   </header>
   <main>
     <div class="no-results" id="no-results" hidden>
@@ -20,9 +35,9 @@
   </main>
   <footer>
     <p>
-      Plant data from <a href="https://www.calflora.org" target="_blank" rel="noopener">Calflora</a>
-      and <a href="https://calscape.org" target="_blank" rel="noopener">Calscape</a>.
-      Photos from <a href="https://www.inaturalist.org" target="_blank" rel="noopener">iNaturalist</a> contributors under Creative Commons licenses.
+      Plant data and photos from <a href="https://www.calflora.org" target="_blank" rel="noopener">Calflora</a>,
+      with links to <a href="https://calscape.org" target="_blank" rel="noopener">Calscape</a>.
+      Photos courtesy of their respective contributors.
       Area: Monterey, CA.
     </p>
   </footer>
