@@ -1,0 +1,53 @@
+name: Refresh Plant Data
+
+on:
+  schedule:
+    # Quarterly: 8am UTC on January 1, April 1, July 1, October 1
+    - cron: '0 8 1 1,4,7,10 *'
+  workflow_dispatch:
+    inputs:
+      tsv_path:
+        description: 'Path to Calflora WGH TSV export (leave blank to use API or refresh photos only)'
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run data collection
+        env:
+          CALFLORA_API_KEY: ${{ secrets.CALFLORA_API_KEY }}
+        run: |
+          TSV_ARG=""
+          if [ -n "${{ github.event.inputs.tsv_path }}" ]; then
+            TSV_ARG="--tsv ${{ github.event.inputs.tsv_path }}"
+          fi
+
+          python scripts/collect_data.py \
+            $TSV_ARG \
+            --calflora-key "$CALFLORA_API_KEY" \
+            --shape-id rs3899 \
+            --existing data/plants.json \
+            --output data/plants.json
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/plants.json
+          git diff --staged --quiet || git commit -m "chore: quarterly plant data refresh $(date -u +%Y-%m-%d)"
+          git push

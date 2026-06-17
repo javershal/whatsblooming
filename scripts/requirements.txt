@@ -1,0 +1,2 @@
+# collect_data.py uses only the Python standard library.
+# Add dependencies here if you extend the script (e.g. requests, beautifulsoup4).

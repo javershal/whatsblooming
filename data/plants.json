@@ -1,0 +1,202 @@
+[
+  {
+    "common_name": "Blue Dicks",
+    "scientific_name": "Dipterostemon capitatus",
+    "bloom_months": [3, 4, 5],
+    "calflora_url": "https://www.calflora.org/entry/visnome.html#srch=t&taxon=Dipterostemon%20capitatus",
+    "calscape_url": "https://calscape.org/plant/Dipterostemon-capitatus-(Blue-Dicks)/",
+    "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/620494492/medium.jpg",
+    "photo_attribution": "(c) nathantay, some rights reserved (CC BY-NC)",
+    "photo_license": "cc-by-nc"
+  },
+  {
+    "common_name": "Blue-eyed Grass",
+    "scientific_name": "Sisyrinchium bellum",
+    "bloom_months": [2, 3, 4, 5],
+    "calflora_url": "https://www.calflora.org/entry/visnome.html#srch=t&taxon=Sisyrinchium%20bellum",
+    "calscape_url": "https://calscape.org/plant/Sisyrinchium-bellum-(Blue-eyed-Grass)/",
+    "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/3188172/medium.JPG",
+    "photo_attribution": "no rights reserved, uploaded by Jesse Rorabaugh",
+    "photo_license": "cc0"
+  },
+  {
+    "common_name": "California Buttercup",
+    "scientific_name": "Ranunculus californicus",
+    "bloom_months": [1, 2, 3, 4],
+    "calflora_url": "https://www.calflora.org/entry/visnome.html#srch=t&taxon=Ranunculus%20californicus",
+    "calscape_url": "https://calscape.org/plant/Ranunculus-californicus-(California-Buttercup)/",
+    "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/268067607/medium.jpg",
+    "photo_attribution": "(c) Jeff Harter, some rights reserved (CC BY-SA), uploaded by Jeff Harter",
+    "photo_license": "cc-by-sa"
+  },
+  {
+    "common_name": "California Phacelia",
+    "scientific_name": "Phacelia californica",
+    "bloom_months": [3, 4, 5, 6],
+    "calflora_url": "https://www.calflora.org/entry/visnome.html#srch=t&taxon=Phacelia%20californica",
+    "calscape_url": "https://calscape.org/plant/Phacelia-californica-(California-Phacelia)/",
+    "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/14315138/medium.jpeg",
+    "photo_attribution": "(c) Krissa Klein, some rights reserved (CC BY-NC), uploaded by Krissa Klein",
+    "photo_license": "cc-by-nc"
+  },
+  {
+    "common_name": "California Poppy",
+    "scientific_name": "Eschscholzia californica",
+    "bloom_months": [2, 3, 4, 5, 6, 7, 8, 9],
+    "calflora_url": "https://www.calflora.org/entry/visnome.html#srch=t&taxon=Eschscholzia%20californica",
+    "calscape_url": "https://calscape.org/plant/Eschscholzia-californica-(California-Poppy)/",
+    "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/67227218/medium.jpg",
+    "photo_attribution": "(c) pronghornranch67, some rights reserved (CC BY-NC)",
+    "photo_license": "cc-by-nc"
+  },
+  {
+    "common_name": "Checkerbloom",
+    "scientific_name": "Sidalcea malviflora",
+    "bloom_months": [3, 4, 5],
+    "calflora_url": "https://www.calflora.org/entry/visnome.html#srch=t&taxon=Sidalcea%20malviflora",
+    "calscape_url": "https://calscape.org/plant/Sidalcea-malviflora-(Checkerbloom)/",
+    "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/962/medium.jpg",
+    "photo_attribution": "(c) Tom Hilton, some rights reserved (CC BY)",
+    "photo_license": "cc-by"
+  },
+  {
+    "common_name": "Clarkia",
+    "scientific_name": "Clarkia unguiculata",
+    "bloom_months": [5, 6, 7, 8],
+    "calflora_url": "https://www.calflora.org/entry/visnome.html#srch=t&taxon=Clarkia%20unguiculata",
+    "calscape_url": "https://calscape.org/plant/Clarkia-unguiculata-(Clarkia)/",
+    "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/132050835/medium.jpg",
+    "photo_attribution": "(c) Don Loarie, some rights reserved (CC BY), uploaded by Don Loarie",
+    "photo_license": "cc-by"
+  },
+  {
+    "common_name": "Cobweb Thistle",
+    "scientific_name": "Cirsium occidentale",
+    "bloom_months": [4, 5, 6, 7, 8],
+    "calflora_url": "https://www.calflora.org/entry/visnome.html#srch=t&taxon=Cirsium%20occidentale",
+    "calscape_url": "https://calscape.org/plant/Cirsium-occidentale-(Cobweb-Thistle)/",
+    "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/42197035/medium.jpg",
+    "photo_attribution": "(c) Rick Wachs, some rights reserved (CC BY-NC), uploaded by Rick Wachs",
+    "photo_license": "cc-by-nc"
+  },
+  {
+    "common_name": "Farewell-to-Spring",
+    "scientific_name": "Clarkia amoena",
+    "bloom_months": [5, 6, 7],
+    "calflora_url": "https://www.calflora.org/entry/visnome.html#srch=t&taxon=Clarkia%20amoena",
+    "calscape_url": "https://calscape.org/plant/Clarkia-amoena-(Farewell-to-Spring)/",
+    "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/397513326/medium.jpg",
+    "photo_attribution": "(c) Colton Veltkamp, some rights reserved (CC BY-NC), uploaded by Colton Veltkamp",
+    "photo_license": "cc-by-nc"
+  },
+  {
+    "common_name": "Golden Yarrow",
+    "scientific_name": "Eriophyllum confertiflorum",
+    "bloom_months": [4, 5, 6, 7, 8],
+    "calflora_url": "https://www.calflora.org/entry/visnome.html#srch=t&taxon=Eriophyllum%20confertiflorum",
+    "calscape_url": "https://calscape.org/plant/Eriophyllum-confertiflorum-(Golden-Yarrow)/",
+    "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/3593413/medium.jpg",
+    "photo_attribution": "(c) wanderingnome, some rights reserved (CC BY-NC-ND)",
+    "photo_license": "cc-by-nc-nd"
+  },
+  {
+    "common_name": "Gumplant",
+    "scientific_name": "Grindelia stricta",
+    "bloom_months": [6, 7, 8, 9, 10],
+    "calflora_url": "https://www.calflora.org/entry/visnome.html#srch=t&taxon=Grindelia%20stricta",
+    "calscape_url": "https://calscape.org/plant/Grindelia-stricta-(Gumplant)/",
+    "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/322552966/medium.jpeg",
+    "photo_attribution": "(c) Brian Starzomski, some rights reserved (CC BY-NC), uploaded by Brian Starzomski",
+    "photo_license": "cc-by-nc"
+  },
+  {
+    "common_name": "Hummingbird Sage",
+    "scientific_name": "Salvia spathacea",
+    "bloom_months": [3, 4, 5],
+    "calflora_url": "https://www.calflora.org/entry/visnome.html#srch=t&taxon=Salvia%20spathacea",
+    "calscape_url": "https://calscape.org/plant/Salvia-spathacea-(Hummingbird-Sage)/",
+    "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/526697773/medium.jpg",
+    "photo_attribution": "(c) fritillariabiflora, some rights reserved (CC BY-NC)",
+    "photo_license": "cc-by-nc"
+  },
+  {
+    "common_name": "Morning Glory",
+    "scientific_name": "Calystegia purpurata",
+    "bloom_months": [4, 5, 6, 7, 8],
+    "calflora_url": "https://www.calflora.org/entry/visnome.html#srch=t&taxon=Calystegia%20purpurata",
+    "calscape_url": "https://calscape.org/plant/Calystegia-purpurata-(Morning-Glory)/",
+    "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/15415/medium.jpg",
+    "photo_attribution": "(c) Tom Hilton, some rights reserved (CC BY)",
+    "photo_license": "cc-by"
+  },
+  {
+    "common_name": "Mule Ears",
+    "scientific_name": "Wyethia angustifolia",
+    "bloom_months": [4, 5, 6, 7],
+    "calflora_url": "https://www.calflora.org/entry/visnome.html#srch=t&taxon=Wyethia%20angustifolia",
+    "calscape_url": "https://calscape.org/plant/Wyethia-angustifolia-(Mule-Ears)/",
+    "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/11682/medium.jpg",
+    "photo_attribution": "(c) kqedquest, some rights reserved (CC BY-NC)",
+    "photo_license": "cc-by-nc"
+  },
+  {
+    "common_name": "Shooting Star",
+    "scientific_name": "Primula clevelandii",
+    "bloom_months": [2, 3, 4],
+    "calflora_url": "https://www.calflora.org/entry/visnome.html#srch=t&taxon=Primula%20clevelandii",
+    "calscape_url": "https://calscape.org/plant/Primula-clevelandii-(Shooting-Star)/",
+    "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/62178292/medium.jpg",
+    "photo_attribution": "(c) jrebman, some rights reserved (CC BY-NC), uploaded by jrebman",
+    "photo_license": "cc-by-nc"
+  },
+  {
+    "common_name": "Sky Lupine",
+    "scientific_name": "Lupinus nanus",
+    "bloom_months": [3, 4, 5],
+    "calflora_url": "https://www.calflora.org/entry/visnome.html#srch=t&taxon=Lupinus%20nanus",
+    "calscape_url": "https://calscape.org/plant/Lupinus-nanus-(Sky-Lupine)/",
+    "photo_url": null,
+    "photo_attribution": null,
+    "photo_license": null
+  },
+  {
+    "common_name": "Soap Plant",
+    "scientific_name": "Chlorogalum pomeridianum",
+    "bloom_months": [5, 6, 7],
+    "calflora_url": "https://www.calflora.org/entry/visnome.html#srch=t&taxon=Chlorogalum%20pomeridianum",
+    "calscape_url": "https://calscape.org/plant/Chlorogalum-pomeridianum-(Soap-Plant)/",
+    "photo_url": null,
+    "photo_attribution": null,
+    "photo_license": null
+  },
+  {
+    "common_name": "Sticky Monkeyflower",
+    "scientific_name": "Diplacus aurantiacus",
+    "bloom_months": [3, 4, 5, 6, 7, 8, 9],
+    "calflora_url": "https://www.calflora.org/entry/visnome.html#srch=t&taxon=Diplacus%20aurantiacus",
+    "calscape_url": "https://calscape.org/plant/Diplacus-aurantiacus-(Sticky-Monkeyflower)/",
+    "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/18817746/medium.jpg",
+    "photo_attribution": "(c) Mike Andersen, some rights reserved (CC BY-NC-ND), uploaded by Mike Andersen",
+    "photo_license": "cc-by-nc-nd"
+  },
+  {
+    "common_name": "Toyon",
+    "scientific_name": "Heteromeles arbutifolia",
+    "bloom_months": [6, 7],
+    "calflora_url": "https://www.calflora.org/entry/visnome.html#srch=t&taxon=Heteromeles%20arbutifolia",
+    "calscape_url": "https://calscape.org/plant/Heteromeles-arbutifolia-(Toyon)/",
+    "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/342304993/medium.jpg",
+    "photo_attribution": "(c) Jiovanny Celis, some rights reserved (CC BY-NC), uploaded by Jiovanny Celis",
+    "photo_license": "cc-by-nc"
+  },
+  {
+    "common_name": "Yarrow",
+    "scientific_name": "Achillea millefolium",
+    "bloom_months": [4, 5, 6, 7, 8],
+    "calflora_url": "https://www.calflora.org/entry/visnome.html#srch=t&taxon=Achillea%20millefolium",
+    "calscape_url": "https://calscape.org/plant/Achillea-millefolium-(Yarrow)/",
+    "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/4902/medium.jpg",
+    "photo_attribution": "(c) Steve Guttman, some rights reserved (CC BY-NC-ND)",
+    "photo_license": "cc-by-nc-nd"
+  }
+]
