@@ -259,6 +259,38 @@ def make_calscape_url(scientific_name: str, common_name: str) -> str:
 
 # ─────────────────────────── Main pipeline ───────────────────────────────────
 
+def dedupe_by_common_name(plants: list[dict]) -> list[dict]:
+    """Collapse records sharing a common name (case-insensitive).
+
+    Calflora lists subspecies/varieties separately but they often share one
+    common name. For this casual site we keep a single representative per common
+    name, preferring one that has a photo and the cleaner (shortest) scientific
+    name, and union the bloom months so no blooming coverage is lost.
+    """
+    groups: dict[str, list[dict]] = {}
+    order: list[str] = []
+    for p in plants:
+        key = (p["common_name"] or "").strip().lower()
+        if key not in groups:
+            groups[key] = []
+            order.append(key)
+        groups[key].append(p)
+
+    out = []
+    for key in order:
+        recs = groups[key]
+        rep = dict(sorted(
+            recs,
+            key=lambda r: (not bool(r.get("photo_url")), len(r.get("scientific_name") or "")),
+        )[0])
+        months: set = set()
+        for r in recs:
+            months.update(r.get("bloom_months") or [])
+        rep["bloom_months"] = sorted(months)
+        out.append(rep)
+    return out
+
+
 def build_output(plants: list[dict], existing: dict[str, dict]) -> list[dict]:
     """Finalize records: add link URLs and preserve a prior photo if missing."""
     out = []
@@ -283,6 +315,7 @@ def build_output(plants: list[dict], existing: dict[str, dict]) -> list[dict]:
             "photo_url": photo_url,
             "photo_attribution": photo_attr,
         })
+    out = dedupe_by_common_name(out)
     out.sort(key=lambda x: x["common_name"] or x["scientific_name"])
     return out
 
