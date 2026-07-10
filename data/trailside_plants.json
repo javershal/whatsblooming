@@ -1,0 +1,836 @@
+[
+  {
+    "common_name": "Sticky monkeyflower",
+    "scientific_name": "Diplacus aurantiacus",
+    "growth_habit": "Shrub",
+    "native": true,
+    "bloom_months": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "habitat": [
+      "coastal-bluff scrub",
+      "Monterey pine forest",
+      "oak woodland",
+      "chaparral"
+    ],
+    "habitat_source": "calflora",
+    "habitat_raw": [
+      "Northern Coastal Scrub",
+      "Coastal Sage Scrub",
+      "Closed-cone Pine Forest",
+      "Redwood Forest",
+      "Yellow Pine Forest",
+      "Mixed Evergreen Forest",
+      "Northern Oak Woodland",
+      "Foothill Woodland",
+      "Chaparral",
+      "Joshua Tree Woodland"
+    ],
+    "description": "Sprawling evergreen shrub with sticky leaves and showy apricot-orange tubular flowers; a coastal-scrub generalist.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=13456",
+    "calscape_url": "https://calscape.org/plant/Diplacus-aurantiacus-(Sticky-monkeyflower)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/704/th/211220.jpg",
+    "photo_attribution": "2024 Steve Conger"
+  },
+  {
+    "common_name": "Coast buckwheat",
+    "scientific_name": "Eriogonum latifolium",
+    "growth_habit": "Perennial herb",
+    "native": true,
+    "bloom_months": [
+      7,
+      8,
+      9
+    ],
+    "habitat": [
+      "coastal dune/strand",
+      "coastal-bluff scrub"
+    ],
+    "habitat_source": "calflora",
+    "habitat_raw": [
+      "Coastal Strand",
+      "Northern Coastal Scrub"
+    ],
+    "description": "Low mounding subshrub topped with round pinkish-white flower clusters on bare stalks; classic coastal bluff and dune plant.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=3293",
+    "calscape_url": "https://calscape.org/plant/Eriogonum-latifolium-(Coast-buckwheat)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/io/247/th/io74122-0.jpg",
+    "photo_attribution": "2022 David Strauch"
+  },
+  {
+    "common_name": "Coastal sage brush",
+    "scientific_name": "Artemisia californica",
+    "growth_habit": "Shrub",
+    "native": true,
+    "bloom_months": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "habitat": [
+      "coastal dune/strand",
+      "coastal-bluff scrub"
+    ],
+    "habitat_source": "calflora",
+    "habitat_raw": [
+      "Coastal Strand",
+      "Coastal Sage Scrub"
+    ],
+    "description": "Aromatic gray-green shrub (California sagebrush) with feathery foliage; the defining smell of coastal sage scrub.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=705",
+    "calscape_url": "https://calscape.org/plant/Artemisia-californica-(Coastal-sage-brush)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/96/th/28962.jpg",
+    "photo_attribution": "2019 Diane Etchison"
+  },
+  {
+    "common_name": "Seaside daisy",
+    "scientific_name": "Erigeron glaucus",
+    "growth_habit": "Perennial herb",
+    "native": true,
+    "bloom_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "habitat": [
+      "coastal dune/strand",
+      "coastal-bluff scrub"
+    ],
+    "habitat_source": "calflora",
+    "habitat_raw": [
+      "Coastal Strand",
+      "Northern Coastal Scrub",
+      "Coastal Sage Scrub"
+    ],
+    "description": "Low clumping perennial with lavender, yellow-centered daisies; hugs coastal bluffs and blooms much of the year.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=3140",
+    "calscape_url": "https://calscape.org/plant/Erigeron-glaucus-(Seaside-daisy)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/552/th/165807.jpg",
+    "photo_attribution": "2023 Toni Corelli"
+  },
+  {
+    "common_name": "Coast indian paintbrush",
+    "scientific_name": "Castilleja affinis ssp. affinis",
+    "growth_habit": "Perennial herb (hemiparasitic)",
+    "native": true,
+    "bloom_months": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "habitat": [
+      "grassland",
+      "coastal-bluff scrub"
+    ],
+    "habitat_source": "calflora+curator",
+    "habitat_raw": [
+      "Valley Grassland"
+    ],
+    "description": "Hemiparasitic perennial with bright red-orange paintbrush-like bracts; found in open grassland and scrub.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=1669",
+    "calscape_url": "https://calscape.org/plant/Castilleja-affinis-ssp.-affinis-(Coast-indian-paintbrush)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/360/th/108083.jpg",
+    "photo_attribution": "2006 Steve Matson",
+    "curator_note": "Common in Monterey coastal scrub; Calflora's subspecies record lists only Valley Grassland."
+  },
+  {
+    "common_name": "Sea lettuce",
+    "scientific_name": "Dudleya farinosa",
+    "growth_habit": "Perennial herb",
+    "native": true,
+    "bloom_months": [
+      6,
+      7,
+      8
+    ],
+    "habitat": [
+      "coastal-bluff scrub"
+    ],
+    "habitat_source": "calflora",
+    "habitat_raw": [
+      "Northern Coastal Scrub",
+      "Coastal Sage Scrub"
+    ],
+    "description": "Rosette succulent (bluff lettuce) with chalky leaves and tall yellow flower stalks; clings to coastal rock.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=2852",
+    "calscape_url": "https://calscape.org/plant/Dudleya-farinosa-(Sea-lettuce)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/mg/16/th/4932.jpg",
+    "photo_attribution": "2015 James Gonsman"
+  },
+  {
+    "common_name": "Beach blue lupine",
+    "scientific_name": "Lupinus chamissonis",
+    "growth_habit": "Shrub",
+    "native": true,
+    "bloom_months": [
+      4,
+      5,
+      6
+    ],
+    "habitat": [
+      "coastal dune/strand"
+    ],
+    "habitat_source": "calflora",
+    "habitat_raw": [
+      "Coastal Strand"
+    ],
+    "description": "Silvery-leaved dune shrub (beach blue lupine) with blue-and-white pea flowers; a sand-stabilizing native.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=5125",
+    "calscape_url": "https://calscape.org/plant/Lupinus-chamissonis-(Beach-blue-lupine)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/902/th/270660.jpg",
+    "photo_attribution": "2025 Mike Russler"
+  },
+  {
+    "common_name": "Beach sand verbena",
+    "scientific_name": "Abronia umbellata",
+    "growth_habit": "Perennial herb",
+    "native": true,
+    "bloom_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "habitat": [
+      "coastal dune/strand"
+    ],
+    "habitat_source": "calflora",
+    "habitat_raw": [
+      "Coastal Strand"
+    ],
+    "description": "Trailing dune annual/perennial with fragrant pink ball-shaped flower clusters; a beach-strand specialist.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=18",
+    "calscape_url": "https://calscape.org/plant/Abronia-umbellata-(Beach-sand-verbena)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/318/th/95528.jpg",
+    "photo_attribution": "2021 Meghan Lindt"
+  },
+  {
+    "common_name": "Dune goldenrod",
+    "scientific_name": "Solidago spathulata",
+    "growth_habit": "Perennial herb",
+    "native": true,
+    "bloom_months": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "habitat": [
+      "coastal dune/strand",
+      "coastal-bluff scrub"
+    ],
+    "habitat_source": "calflora",
+    "habitat_raw": [
+      "Coastal Strand",
+      "Northern Coastal Scrub"
+    ],
+    "description": "Compact goldenrod with dense spikes of small yellow flowers; blooms late into fall on dunes and bluffs.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=11087",
+    "calscape_url": "https://calscape.org/plant/Solidago-spathulata-(Dune-goldenrod)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/214/th/64223.jpg",
+    "photo_attribution": "2016 Steve Matson"
+  },
+  {
+    "common_name": "Beach evening primrose",
+    "scientific_name": "Camissoniopsis cheiranthifolia",
+    "growth_habit": "Perennial herb",
+    "native": true,
+    "bloom_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "habitat": [
+      "coastal dune/strand"
+    ],
+    "habitat_source": "calflora",
+    "habitat_raw": [
+      "Coastal Strand"
+    ],
+    "description": "Low silver-gray dune mat with small yellow four-petaled flowers (beach evening primrose); a strand pioneer.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=11447",
+    "calscape_url": "https://calscape.org/plant/Camissoniopsis-cheiranthifolia-(Beach-evening-primrose)/",
+    "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/550115496/small.jpg",
+    "photo_attribution": "2025 Cat Chang"
+  },
+  {
+    "common_name": "Black sage",
+    "scientific_name": "Salvia mellifera",
+    "growth_habit": "Shrub",
+    "native": true,
+    "bloom_months": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "habitat": [
+      "coastal-bluff scrub",
+      "chaparral"
+    ],
+    "habitat_source": "calflora",
+    "habitat_raw": [
+      "Coastal Sage Scrub",
+      "Chaparral"
+    ],
+    "description": "Aromatic chaparral shrub (black sage) with pale lavender flower whorls stacked along the stems.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=7311",
+    "calscape_url": "https://calscape.org/plant/Salvia-mellifera-(Black-sage)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/245/th/73589.jpg",
+    "photo_attribution": "2017 Steve Matson"
+  },
+  {
+    "common_name": "Bush poppy",
+    "scientific_name": "Dendromecon rigida",
+    "growth_habit": "Shrub",
+    "native": true,
+    "bloom_months": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "habitat": [
+      "chaparral"
+    ],
+    "habitat_source": "calflora",
+    "habitat_raw": [
+      "Chaparral"
+    ],
+    "description": "Stiff evergreen chaparral shrub (bush poppy) with bright yellow poppy flowers; a fast post-fire bloomer.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=2686",
+    "calscape_url": "https://calscape.org/plant/Dendromecon-rigida-(Bush-poppy)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/779/th/233853.jpg",
+    "photo_attribution": "2024 Mike Russler"
+  },
+  {
+    "common_name": "Carmel ceanothus",
+    "scientific_name": "Ceanothus thyrsiflorus var. griseus",
+    "growth_habit": "Shrub",
+    "native": true,
+    "bloom_months": [
+      3,
+      4,
+      5
+    ],
+    "habitat": [
+      "coastal-bluff scrub",
+      "Monterey pine forest"
+    ],
+    "habitat_source": "calflora",
+    "habitat_raw": [
+      "Northern Coastal Scrub",
+      "Closed-cone Pine Forest"
+    ],
+    "description": "Dense evergreen shrub (Carmel ceanothus) covered in pale-blue flower clusters in spring.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=11492",
+    "calscape_url": "https://calscape.org/plant/Ceanothus-thyrsiflorus-var.-griseus-(Carmel-ceanothus)/",
+    "photo_url": "0000_0000/0406/0312.jpeg",
+    "photo_attribution": "2006 Steve Matson"
+  },
+  {
+    "common_name": "Big berry manzanita",
+    "scientific_name": "Arctostaphylos glauca",
+    "growth_habit": "Tree, Shrub",
+    "native": true,
+    "bloom_months": [
+      1,
+      2
+    ],
+    "habitat": [
+      "chaparral"
+    ],
+    "habitat_source": "calflora",
+    "habitat_raw": [
+      "Chaparral",
+      "Joshua Tree Woodland"
+    ],
+    "description": "Large manzanita with smooth red bark and urn-shaped pink-white flowers; a winter-blooming chaparral shrub.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=556",
+    "calscape_url": "https://calscape.org/plant/Arctostaphylos-glauca-(Big-berry-manzanita)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/gp/52/th/10428.jpg",
+    "photo_attribution": "2018 Ron Vanderhoff"
+  },
+  {
+    "common_name": "Chamise",
+    "scientific_name": "Adenostoma fasciculatum",
+    "growth_habit": "Tree, Shrub",
+    "native": true,
+    "bloom_months": [
+      6,
+      7,
+      8
+    ],
+    "habitat": [
+      "chaparral"
+    ],
+    "habitat_source": "calflora",
+    "habitat_raw": [
+      "Chaparral"
+    ],
+    "description": "Wiry needle-leaved chaparral shrub (chamise) with frothy cream flower sprays; the dominant chaparral plant.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=97",
+    "calscape_url": "https://calscape.org/plant/Adenostoma-fasciculatum-(Chamise)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/306/th/91841.jpg",
+    "photo_attribution": "2019 Steve Matson"
+  },
+  {
+    "common_name": "Hummingbird sage",
+    "scientific_name": "Salvia spathacea",
+    "growth_habit": "Perennial herb",
+    "native": true,
+    "bloom_months": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "habitat": [
+      "coastal dune/strand",
+      "oak woodland",
+      "chaparral"
+    ],
+    "habitat_source": "calflora",
+    "habitat_raw": [
+      "Coastal Strand",
+      "Northern Oak Woodland",
+      "Southern Oak Woodland",
+      "Foothill Woodland",
+      "Chaparral"
+    ],
+    "description": "Spreading perennial (hummingbird sage) with tall magenta flower whorls; grows in shady oak woodland.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=7316",
+    "calscape_url": "https://calscape.org/plant/Salvia-spathacea-(Hummingbird-sage)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/160/th/48238.jpg",
+    "photo_attribution": "2020 David Wolfson"
+  },
+  {
+    "common_name": "Douglas iris",
+    "scientific_name": "Iris douglasiana",
+    "growth_habit": "Perennial herb",
+    "native": true,
+    "bloom_months": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "habitat": [
+      "oak woodland",
+      "grassland"
+    ],
+    "habitat_source": "calflora",
+    "habitat_raw": [
+      "Mixed Evergreen Forest",
+      "Coastal Prairie"
+    ],
+    "description": "Clumping perennial (Douglas iris) with pale-blue to purple flowers; favors grassy openings and forest edges.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=4346",
+    "calscape_url": "https://calscape.org/plant/Iris-douglasiana-(Douglas-iris)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/123/th/37048.jpg",
+    "photo_attribution": "2020 Susan McDougall"
+  },
+  {
+    "common_name": "California coffeeberry",
+    "scientific_name": "Frangula californica",
+    "growth_habit": "Shrub",
+    "native": true,
+    "bloom_months": [
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "habitat": [
+      "coastal dune/strand",
+      "coastal-bluff scrub",
+      "oak woodland",
+      "chaparral"
+    ],
+    "habitat_source": "calflora",
+    "habitat_raw": [
+      "Coastal Strand",
+      "Northern Coastal Scrub",
+      "Coastal Sage Scrub",
+      "Creosote Bush Scrub",
+      "Redwood Forest",
+      "Yellow Pine Forest",
+      "Red Fir Forest",
+      "Mixed Evergreen Forest",
+      "Foothill Woodland",
+      "Chaparral",
+      "Pinyon-Juniper Woodland",
+      "Joshua Tree Woodland"
+    ],
+    "description": "Evergreen shrub (California coffeeberry) with inconspicuous greenish flowers and berries ripening red to black.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=10902",
+    "calscape_url": "https://calscape.org/plant/Frangula-californica-(California-coffeeberry)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/305/th/91726.jpg",
+    "photo_attribution": "2015 Steve Matson"
+  },
+  {
+    "common_name": "Coast live oak",
+    "scientific_name": "Quercus agrifolia",
+    "growth_habit": "Tree",
+    "native": true,
+    "bloom_months": [
+      2,
+      3,
+      4
+    ],
+    "habitat": [
+      "oak woodland"
+    ],
+    "habitat_source": "calflora",
+    "habitat_raw": [
+      "Mixed Evergreen Forest",
+      "Southern Oak Woodland",
+      "Foothill Woodland"
+    ],
+    "description": "Spreading evergreen coast live oak with holly-like leaves; the keystone canopy of local oak woodland.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=6983",
+    "calscape_url": "https://calscape.org/plant/Quercus-agrifolia-(Coast-live-oak)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/io/201/th/io60451-0.jpg",
+    "photo_attribution": "2022 David Strauch"
+  },
+  {
+    "common_name": "Toyon",
+    "scientific_name": "Heteromeles arbutifolia",
+    "growth_habit": "Shrub",
+    "native": true,
+    "bloom_months": [
+      6,
+      7,
+      8
+    ],
+    "habitat": [
+      "chaparral",
+      "oak woodland"
+    ],
+    "habitat_source": "calflora+curator",
+    "habitat_raw": [
+      "Chaparral"
+    ],
+    "description": "Evergreen shrub (toyon) with creamy summer flower clusters and bright red winter berries.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=4140",
+    "calscape_url": "https://calscape.org/plant/Heteromeles-arbutifolia-(Toyon)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/gp/25/th/5082.jpg",
+    "photo_attribution": "2015 James Gonsman",
+    "curator_note": "Classic coast-live-oak understory shrub; Calflora gave only Chaparral."
+  },
+  {
+    "common_name": "Columbine",
+    "scientific_name": "Aquilegia formosa",
+    "growth_habit": "Perennial herb",
+    "native": true,
+    "bloom_months": [
+      3,
+      4,
+      5
+    ],
+    "habitat": [
+      "chaparral",
+      "riparian"
+    ],
+    "habitat_source": "calflora",
+    "habitat_raw": [
+      "Yellow Pine Forest",
+      "Red Fir Forest",
+      "Lodgepole Forest",
+      "Subalpine Forest",
+      "Chaparral",
+      "Pinyon-Juniper Woodland",
+      "wetland-riparian"
+    ],
+    "description": "Nodding perennial (western columbine) with spurred red-and-yellow flowers; found along shaded streams.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=430",
+    "calscape_url": "https://calscape.org/plant/Aquilegia-formosa-(Columbine)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/472/th/141604.jpg",
+    "photo_attribution": "2022 Charles Russell"
+  },
+  {
+    "common_name": "Seep monkey flower",
+    "scientific_name": "Erythranthe guttata",
+    "growth_habit": "Annual, Perennial herb (rhizomatous)",
+    "native": true,
+    "bloom_months": [
+      4,
+      5,
+      6
+    ],
+    "habitat": [
+      "coastal dune/strand",
+      "coastal-bluff scrub",
+      "oak woodland",
+      "chaparral",
+      "grassland",
+      "riparian"
+    ],
+    "habitat_source": "calflora",
+    "habitat_raw": [
+      "Coastal Strand",
+      "Northern Coastal Scrub",
+      "Yellow Pine Forest",
+      "Red Fir Forest",
+      "Lodgepole Forest",
+      "Subalpine Forest",
+      "Foothill Woodland",
+      "Chaparral",
+      "Valley Grassland",
+      "Pinyon-Juniper Woodland",
+      "wetland-riparian"
+    ],
+    "description": "Sprawling yellow-flowered seep monkeyflower of wet seeps and stream edges.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=13493",
+    "calscape_url": "https://calscape.org/plant/Erythranthe-guttata-(Seep-monkey-flower)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/104/th/31303.jpg",
+    "photo_attribution": "2019 Stacie Wolny"
+  },
+  {
+    "common_name": "Coast twinberry",
+    "scientific_name": "Lonicera involucrata var. ledebourii",
+    "growth_habit": "Shrub",
+    "native": true,
+    "bloom_months": [
+      4,
+      5,
+      6
+    ],
+    "habitat": [
+      "coastal dune/strand",
+      "Monterey pine forest",
+      "riparian"
+    ],
+    "habitat_source": "calflora",
+    "habitat_raw": [
+      "Coastal Strand",
+      "Closed-cone Pine Forest",
+      "Red Fir Forest",
+      "Lodgepole Forest",
+      "Subalpine Forest",
+      "wetland-riparian"
+    ],
+    "description": "Riparian shrub (coast twinberry) with paired yellow tubular flowers and dark berries in red bracts.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=5012",
+    "calscape_url": "https://calscape.org/plant/Lonicera-involucrata-var.-ledebourii-(Coast-twinberry)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/gp/24/th/4954.jpg",
+    "photo_attribution": "2014 James Gonsman"
+  },
+  {
+    "common_name": "California poppy",
+    "scientific_name": "Eschscholzia californica",
+    "growth_habit": "Annual, Perennial herb",
+    "native": true,
+    "bloom_months": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "habitat": [
+      "coastal-bluff scrub",
+      "oak woodland",
+      "chaparral",
+      "grassland"
+    ],
+    "habitat_source": "calflora",
+    "habitat_raw": [
+      "Northern Coastal Scrub",
+      "Yellow Pine Forest",
+      "Red Fir Forest",
+      "Lodgepole Forest",
+      "Foothill Woodland",
+      "Chaparral",
+      "Coastal Prairie",
+      "Valley Grassland"
+    ],
+    "description": "The California poppy: silky orange cup-shaped flowers over blue-green foliage; a grassland and roadside staple.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=3512",
+    "calscape_url": "https://calscape.org/plant/Eschscholzia-californica-(California-poppy)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/io/42/th/io12831-0.jpg",
+    "photo_attribution": "2019 Dee Shea Himes"
+  },
+  {
+    "common_name": "Arroyo lupine",
+    "scientific_name": "Lupinus succulentus",
+    "growth_habit": "Annual herb",
+    "native": true,
+    "bloom_months": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "habitat": [
+      "oak woodland",
+      "chaparral",
+      "grassland"
+    ],
+    "habitat_source": "calflora",
+    "habitat_raw": [
+      "Yellow Pine Forest",
+      "Foothill Woodland",
+      "Chaparral",
+      "Valley Grassland"
+    ],
+    "description": "Robust annual (arroyo lupine) with deep blue-purple flower spikes; carpets grassland after wet winters.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=5217",
+    "calscape_url": "https://calscape.org/plant/Lupinus-succulentus-(Arroyo-lupine)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/807/th/242112.jpg",
+    "photo_attribution": "2025 Mike Russler"
+  },
+  {
+    "common_name": "Wild hollyhock",
+    "scientific_name": "Sidalcea malviflora",
+    "growth_habit": "Perennial herb",
+    "native": true,
+    "bloom_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "habitat": [
+      "oak woodland",
+      "grassland"
+    ],
+    "habitat_source": "calflora",
+    "habitat_raw": [
+      "Redwood Forest",
+      "Yellow Pine Forest",
+      "Mixed Evergreen Forest",
+      "Foothill Woodland",
+      "Coastal Prairie",
+      "Valley Grassland"
+    ],
+    "description": "Perennial (checkerbloom) with pink hollyhock-like flowers on slender stalks in coastal grassland.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=7564",
+    "calscape_url": "https://calscape.org/plant/Sidalcea-malviflora-(Wild-hollyhock)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/727/th/218116.jpg",
+    "photo_attribution": "2024 Mary Ann Machi"
+  },
+  {
+    "common_name": "Blue eyed grass",
+    "scientific_name": "Sisyrinchium bellum",
+    "growth_habit": "Perennial herb",
+    "native": true,
+    "bloom_months": [
+      3,
+      4,
+      5
+    ],
+    "habitat": [
+      "oak woodland",
+      "riparian",
+      "grassland"
+    ],
+    "habitat_source": "calflora+curator",
+    "habitat_raw": [
+      "Sagebrush Scrub",
+      "Yellow Pine Forest",
+      "Foothill Woodland",
+      "wetland-riparian"
+    ],
+    "description": "Grass-like perennial (blue-eyed grass) with small blue-purple yellow-centered flowers in spring meadows.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=7632",
+    "calscape_url": "https://calscape.org/plant/Sisyrinchium-bellum-(Blue-eyed-grass)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/702/th/210717.jpg",
+    "photo_attribution": "2024 Steve Conger",
+    "curator_note": "Quintessential spring grassland wildflower locally; Calflora's record gave only Foothill Woodland + wetland-riparian, omitting grassland."
+  },
+  {
+    "common_name": "Chia sage",
+    "scientific_name": "Salvia columbariae",
+    "growth_habit": "Annual herb",
+    "native": true,
+    "bloom_months": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "habitat": [
+      "coastal-bluff scrub",
+      "oak woodland",
+      "chaparral"
+    ],
+    "habitat_source": "calflora",
+    "habitat_raw": [
+      "Coastal Sage Scrub",
+      "Creosote Bush Scrub",
+      "Foothill Woodland",
+      "Chaparral"
+    ],
+    "description": "Annual (chia) with spiny blue flower clusters stacked on square stems; a dry slope and disturbed-ground native.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=7302",
+    "calscape_url": "https://calscape.org/plant/Salvia-columbariae-(Chia-sage)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/147/th/44180.jpg",
+    "photo_attribution": "2020 Ron Vanderhoff"
+  },
+  {
+    "common_name": "Coast silk tassel",
+    "scientific_name": "Garrya elliptica",
+    "growth_habit": "Tree, Shrub",
+    "native": true,
+    "bloom_months": [
+      1,
+      12
+    ],
+    "habitat": [
+      "coastal-bluff scrub",
+      "oak woodland",
+      "chaparral"
+    ],
+    "habitat_source": "calflora",
+    "habitat_raw": [
+      "Northern Coastal Scrub",
+      "Mixed Evergreen Forest",
+      "Chaparral"
+    ],
+    "description": "Evergreen shrub (coast silk tassel) with long dangling gray-green catkins; a notable winter bloomer.",
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=3748",
+    "calscape_url": "https://calscape.org/plant/Garrya-elliptica-(Coast-silk-tassel)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/162/th/48600.jpg",
+    "photo_attribution": "2004 Michael Charters"
+  }
+]

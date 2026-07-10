@@ -1,0 +1,690 @@
+[
+  {
+    "id": "GT-001",
+    "question": "What's blooming at Garland Ranch in May?",
+    "category": "place_time_blooms",
+    "difficulty": "easy",
+    "eval_month": 5,
+    "expected_call": "answer",
+    "expected_answer": "Several plants match Garland Ranch's likely habitats (oak woodland/chaparral/grassland/riparian) in May: Douglas iris, columbine, blue eyed grass, wild hollyhock, sticky monkeyflower, seep monkeyflower, hummingbird sage. 7+ match; a good answer surfaces ~5 of the strongest and offers more.",
+    "expected_source": [
+      "Douglas iris",
+      "Columbine",
+      "Blue eyed grass",
+      "Wild hollyhock",
+      "Sticky monkeyflower",
+      "Seep monkey flower",
+      "Hummingbird sage"
+    ],
+    "notes": "Core J1 baseline. Tests S1 cap-at-5 + offer-more behavior against a larger-than-5 true set."
+  },
+  {
+    "id": "GT-002",
+    "question": "What flowers will I see at Point Lobos in April?",
+    "category": "place_time_blooms",
+    "difficulty": "easy",
+    "eval_month": 4,
+    "expected_call": "answer",
+    "expected_answer": "Point Lobos's coastal-bluff scrub + Monterey pine forest are bloom-dense in April: sticky monkeyflower, coastal sage brush, seaside daisy, coast indian paintbrush, black sage, Carmel ceanothus, California coffeeberry, California poppy, chia sage, seep monkeyflower, coast twinberry all match -- 11 plants. A good answer surfaces ~5 of the strongest and offers more.",
+    "expected_source": [
+      "Sticky monkeyflower",
+      "Seaside daisy",
+      "Carmel ceanothus",
+      "Coast indian paintbrush",
+      "California poppy"
+    ],
+    "notes": "Core J1 baseline at a different sourced place. Point Lobos's coastal-bluff scrub is the densest habitat tag in the corpus, so April is a large (11-plant) set -- a cap-at-5 + offer-more test. Count corrected 5 -> 11 (2026-06-30 places.json cross-check); the original 'exactly 5, no offer-more' boundary intent is no longer met here and may warrant a dedicated small-true-set record."
+  },
+  {
+    "id": "GT-003",
+    "question": "What's in bloom at Asilomar right now in June?",
+    "category": "place_time_blooms",
+    "difficulty": "medium",
+    "eval_month": 6,
+    "expected_call": "answer",
+    "expected_answer": "Asilomar's dune/strand + coastal-bluff scrub habitats in June: coastal sage brush, seaside daisy, dune goldenrod, beach evening primrose, beach sand verbena, sticky monkeyflower, California coffeeberry. 7+ match; cap at ~5 and offer more.",
+    "expected_source": [
+      "Coastal sage brush",
+      "Seaside daisy",
+      "Dune goldenrod",
+      "Beach evening primrose",
+      "Beach sand verbena"
+    ],
+    "notes": "J1 baseline, dune/strand-heavy habitat, also embeds a 'right now' phrase resolved by eval_month rather than triggering a hedge -- the place+month framing is explicit enough to answer directly."
+  },
+  {
+    "id": "GT-004",
+    "question": "What will be blooming at Garland Ranch in February?",
+    "category": "place_time_blooms",
+    "difficulty": "medium",
+    "eval_month": 2,
+    "expected_call": "answer",
+    "expected_answer": "Winter/early-spring bloomers matching Garland Ranch habitats in February: bush poppy, Douglas iris, coast live oak, hummingbird sage, arroyo lupine, big berry manzanita (chaparral only, lower confidence for oak-woodland-heavy areas). 5-6 plants match.",
+    "expected_source": [
+      "Bush poppy",
+      "Douglas iris",
+      "Coast live oak",
+      "Hummingbird sage",
+      "Arroyo lupine"
+    ],
+    "notes": "Off-peak-season J1 case, deliberately not spring/summer, to check the model isn't just pattern-matching 'lots of blooms' regardless of month."
+  },
+  {
+    "id": "GT-005",
+    "question": "What's blooming along the coast near Asilomar this September?",
+    "category": "place_time_blooms",
+    "difficulty": "medium",
+    "eval_month": 9,
+    "expected_call": "answer",
+    "expected_answer": "September is past peak for most dune/strand species; matches narrow to coast buckwheat, coastal sage brush, dune goldenrod, beach sand verbena (year-round bloomer). 4 plants match -- a thin month, correctly reported as thin rather than padded.",
+    "expected_source": [
+      "Coast buckwheat",
+      "Coastal sage brush",
+      "Dune goldenrod",
+      "Beach sand verbena"
+    ],
+    "notes": "Tests S1's 'no padding' anchor directly -- a weak month should yield a short honest list, not be stretched to look impressive."
+  },
+  {
+    "id": "GT-006",
+    "question": "What's blooming at Point Lobos in December?",
+    "category": "place_time_blooms",
+    "difficulty": "hard",
+    "eval_month": 12,
+    "expected_call": "answer",
+    "expected_answer": "Only one match: coast silk tassel (Jan, Dec bloom -- a notable winter bloomer) if Point Lobos's oak-woodland/chaparral overlap is counted; otherwise no December bloomers are confirmed for Point Lobos's core coastal-bluff/pine-forest habitats. A correct answer is honest that December is sparse-to-empty rather than inventing filler.",
+    "expected_source": [
+      "Coast silk tassel"
+    ],
+    "notes": "Deep off-season J1 case bordering on a thin-set refuse -- tests whether the model pads an empty-ish month or honestly reports near-zero matches."
+  },
+  {
+    "id": "GT-007",
+    "question": "Where and when can I see sticky monkeyflower?",
+    "category": "flower_where_when",
+    "difficulty": "easy",
+    "eval_month": null,
+    "expected_call": "answer",
+    "expected_answer": "Sticky monkeyflower blooms Mar-Aug across coastal-bluff scrub, Monterey pine forest, oak woodland, and chaparral -- i.e. all 3 sourced places (Garland Ranch, Asilomar, Point Lobos) during spring-summer.",
+    "expected_source": [
+      "Sticky monkeyflower"
+    ],
+    "notes": "Core J2 baseline -- a generalist plant present in nearly every habitat, testing that the habitat-list output stays accurate even when the answer is 'almost everywhere'."
+  },
+  {
+    "id": "GT-008",
+    "question": "Where and when can I see Douglas iris blooming?",
+    "category": "flower_where_when",
+    "difficulty": "easy",
+    "eval_month": null,
+    "expected_call": "answer",
+    "expected_answer": "Douglas iris blooms Feb-Jun in oak woodland and grassland -- best chance at Garland Ranch, which has both habitats; not expected at Asilomar or Point Lobos (dune/coastal-bluff dominant).",
+    "expected_source": [
+      "Douglas iris"
+    ],
+    "notes": "J2 baseline with a narrower habitat range -- tests that the model correctly excludes the 2 sourced places where it wouldn't be found, not just lists all 3 places by default."
+  },
+  {
+    "id": "GT-009",
+    "question": "I want to see California poppy -- where and when should I go?",
+    "category": "flower_where_when",
+    "difficulty": "medium",
+    "eval_month": null,
+    "expected_call": "answer",
+    "expected_answer": "California poppy blooms Feb-Sep across coastal-bluff scrub, oak woodland, chaparral, and grassland -- a long season and broad habitat range, present at Garland Ranch and likely Point Lobos's coastal-bluff areas; less likely at Asilomar's dune-dominant habitat.",
+    "expected_source": [
+      "California poppy"
+    ],
+    "notes": "J2 case with an unusually long bloom window -- tests whether the model collapses a 7-month season into a single 'best' month or correctly reports the full range as decision-useful."
+  },
+  {
+    "id": "GT-010",
+    "question": "Where can I find big berry manzanita in bloom?",
+    "category": "flower_where_when",
+    "difficulty": "medium",
+    "eval_month": null,
+    "expected_call": "hedge",
+    "expected_answer": "Big berry manzanita blooms only Jan-Feb in chaparral. Outside that 2-month window the answer should hedge that the window has likely passed/not started, depending on when asked; this record itself isn't pinned to a specific eval_month so the answer should state the window plainly.",
+    "expected_source": [
+      "Big berry manzanita"
+    ],
+    "notes": "J2 with a very narrow bloom window -- good candidate for showing how a narrow season interacts with G1 if a model defaults to assuming 'now' without an eval_month anchor."
+  },
+  {
+    "id": "GT-011",
+    "question": "When and where can I see coast silk tassel flowers?",
+    "category": "flower_where_when",
+    "difficulty": "hard",
+    "eval_month": null,
+    "expected_call": "answer",
+    "expected_answer": "Coast silk tassel blooms Dec-Jan only, in coastal-bluff scrub, oak woodland, and chaparral -- a winter bloomer, notable because most of the corpus peaks in spring/summer.",
+    "expected_source": [
+      "Coast silk tassel"
+    ],
+    "notes": "J2 near-miss against typical seasonal assumption -- tests whether the model defaults to 'spring is bloom season' bias and gets a winter-only plant wrong."
+  },
+  {
+    "id": "GT-012",
+    "question": "Where and when can I see arroyo lupine?",
+    "category": "flower_where_when",
+    "difficulty": "easy",
+    "eval_month": null,
+    "expected_call": "answer",
+    "expected_answer": "Arroyo lupine blooms Feb-May in oak woodland, chaparral, and grassland -- best chance at Garland Ranch.",
+    "expected_source": [
+      "Arroyo lupine"
+    ],
+    "notes": "Standard J2 case rounding out the cluster with a single clear sourced-place answer."
+  },
+  {
+    "id": "GT-013",
+    "question": "Is the lupine out yet?",
+    "category": "temporal_hedge",
+    "difficulty": "medium",
+    "eval_month": 4,
+    "expected_call": "hedge",
+    "expected_answer": "Beach blue lupine (dune/strand, Apr-Jun) and arroyo lupine (oak woodland/chaparral/grassland, Feb-May) are both plausibly in bloom in April. Answer should hedge: name the typical window for whichever lupine is contextually relevant, and note timing shifts year to year with rainfall.",
+    "expected_source": [
+      "Beach blue lupine",
+      "Arroyo lupine"
+    ],
+    "notes": "Canonical under-hedge probe. Also tests handling plant-name ambiguity (2 lupines in corpus) -- a good answer should either ask which or address both."
+  },
+  {
+    "id": "GT-014",
+    "question": "Is the lupine out yet?",
+    "category": "temporal_hedge",
+    "difficulty": "medium",
+    "eval_month": 9,
+    "expected_call": "refuse",
+    "expected_answer": "Both lupine species' bloom windows (Apr-Jun, Feb-May) have closed by September. Answer should state plainly that lupine season has passed for the year, not hedge as if uncertain.",
+    "expected_source": [
+      "Beach blue lupine",
+      "Arroyo lupine"
+    ],
+    "notes": "Paired with GT-013, same question text, different eval_month -- the reproducibility test for the temporal parameterization the schema was built for. Correct answer flips from hedge to a confident negative."
+  },
+  {
+    "id": "GT-015",
+    "question": "Is the toyon blooming this week?",
+    "category": "temporal_hedge",
+    "difficulty": "medium",
+    "eval_month": 7,
+    "expected_call": "hedge",
+    "expected_answer": "Toyon blooms Jun-Aug; July is mid-window, so likely blooming, but exact week-level timing can't be confirmed from the corpus. Answer should give the typical window and hedge on 'this week' specifically.",
+    "expected_source": [
+      "Toyon"
+    ],
+    "notes": "Under-hedge probe using a different plant, mid-season rather than edge-of-season, to vary difficulty."
+  },
+  {
+    "id": "GT-016",
+    "question": "What's typically blooming at Garland Ranch in April?",
+    "category": "temporal_hedge",
+    "difficulty": "easy",
+    "eval_month": 4,
+    "expected_call": "answer",
+    "expected_answer": "This is a stated-month question, not a live-certainty one -- should be answered confidently and fully, not hedged. Sticky monkeyflower, Carmel ceanothus, Douglas iris, hummingbird sage, columbine, seep monkeyflower, arroyo lupine, California poppy, chia sage all match. Cap at ~5, offer more.",
+    "expected_source": [
+      "Sticky monkeyflower",
+      "Carmel ceanothus",
+      "Douglas iris",
+      "Hummingbird sage",
+      "Columbine"
+    ],
+    "notes": "Over-hedge guardrail, paired with GT-013/14/15 -- catches a model that's learned to hedge everything. 'Typically' + a stated month should produce a confident answer."
+  },
+  {
+    "id": "GT-017",
+    "question": "Is the bush poppy still blooming in May?",
+    "category": "temporal_hedge",
+    "difficulty": "hard",
+    "eval_month": 5,
+    "expected_call": "hedge",
+    "expected_answer": "Bush poppy blooms Feb-May, so May is the tail end of its window. Answer should hedge specifically on edge-of-season uncertainty rather than a flat yes or no.",
+    "expected_source": [
+      "Bush poppy"
+    ],
+    "notes": "Edge-of-season hedge, distinct flavor from 'has it started' -- tests whether the model recognizes a closing window, not just an opening one."
+  },
+  {
+    "id": "GT-018",
+    "question": "Will the chamise be blooming if I hike at Garland Ranch in July?",
+    "category": "temporal_hedge",
+    "difficulty": "easy",
+    "eval_month": 7,
+    "expected_call": "answer",
+    "expected_answer": "Chamise blooms Jun-Aug; July is solidly mid-window in chaparral, which Garland Ranch has. This can be answered confidently, not hedged -- not an edge-of-season or live-certainty case.",
+    "expected_source": [
+      "Chamise"
+    ],
+    "notes": "Second over-hedge guardrail with a 'will X be blooming if I hike' phrasing that superficially resembles the lupine hedge cases but is actually mid-season and answerable -- checks the model isn't pattern-matching on phrasing alone."
+  },
+  {
+    "id": "GT-019",
+    "question": "What might I expect to see in terms of color at Asilomar in May?",
+    "category": "coverage_gradient",
+    "difficulty": "easy",
+    "eval_month": 5,
+    "expected_call": "answer",
+    "expected_answer": "Asilomar's May bloomers with color descriptors: coastal sage brush, seaside daisy (lavender/yellow), dune goldenrod (yellow), beach evening primrose (yellow), beach sand verbena (pink), sticky monkeyflower (apricot-orange). 6 match; cap at ~5.",
+    "expected_source": [
+      "Seaside daisy",
+      "Dune goldenrod",
+      "Beach evening primrose",
+      "Beach sand verbena",
+      "Sticky monkeyflower"
+    ],
+    "notes": "Second color-density positive anchor at a different place, reinforcing GT-031 as a baseline before the harder coverage cases."
+  },
+  {
+    "id": "GT-020",
+    "question": "What yellow flowers might I find at Point Lobos?",
+    "category": "coverage_gradient",
+    "difficulty": "medium",
+    "eval_month": null,
+    "expected_call": "answer",
+    "expected_answer": "Among Point Lobos habitat plants, yellow-flowered matches include sea lettuce (bluff lettuce, tall yellow stalks) if coastal-bluff overlap counts, and seaside daisy (yellow-centered). A correct answer should be narrow and explicit that few corpus entries for this habitat are described as solidly yellow.",
+    "expected_source": [
+      "Sea lettuce",
+      "Seaside daisy"
+    ],
+    "notes": "Color attribute lookup narrowed by both place and color -- tests whether the model correctly intersects habitat with color rather than just listing all yellow plants corpus-wide."
+  },
+  {
+    "id": "GT-021",
+    "question": "What purple or blue flowers should I look for around Garland Ranch in spring?",
+    "category": "coverage_gradient",
+    "difficulty": "medium",
+    "eval_month": 4,
+    "expected_call": "answer",
+    "expected_answer": "Garland Ranch spring matches with purple/blue tones: Douglas iris (pale-blue to purple), blue eyed grass (blue-purple), arroyo lupine (deep blue-purple), chia sage (blue), columbine (partly red-and-yellow, excluded). 4 strong matches.",
+    "expected_source": [
+      "Douglas iris",
+      "Blue eyed grass",
+      "Arroyo lupine",
+      "Chia sage"
+    ],
+    "notes": "Attribute lookup with a color near-synonym range (purple/blue) -- tests whether the model over-includes loosely-related colors or stays disciplined to the described hues."
+  },
+  {
+    "id": "GT-022",
+    "question": "I'm seeing a lot of yellow at Asilomar -- what plants might those be?",
+    "category": "stealth_id",
+    "difficulty": "medium",
+    "eval_month": 5,
+    "expected_call": "answer",
+    "expected_answer": "Plausible yellow-flowered matches for Asilomar in May: dune goldenrod, beach evening primrose, possibly sea lettuce. This is a prospective attribute-match, not a live photo ID, so it can be answered as a candidate list with appropriate hedging that it's a guess based on what's typically there, not a confirmed ID.",
+    "expected_source": [
+      "Dune goldenrod",
+      "Beach evening primrose"
+    ],
+    "notes": "Near-miss against GT-023 below. The phrasing implies live observation ('I'm seeing') but doesn't ask for identification of a specific photographed plant -- judgment call on whether this crosses into stealth-ID; flagged as the borderline case."
+  },
+  {
+    "id": "GT-023",
+    "question": "What are these yellow plants at Garland Ranch? (photo attached)",
+    "category": "stealth_id",
+    "difficulty": "medium",
+    "eval_month": null,
+    "expected_call": "redirect",
+    "expected_answer": "Declines to identify from a photo; redirects to Google Lens or iNaturalist for visual ID. May optionally offer the typical yellow-flowered plants for the place/season as a non-ID fallback.",
+    "expected_source": [],
+    "notes": "Clean stealth-ID case -- 'these' plus an implied photo crosses the persona boundary explicitly named in the rubric (photo ID out of scope). Pairs with GT-022 to test where the line actually falls."
+  },
+  {
+    "id": "GT-024",
+    "question": "Where should I go to see blooming monkeyflower?",
+    "category": "flower_where_when",
+    "difficulty": "easy",
+    "eval_month": null,
+    "expected_call": "answer",
+    "expected_answer": "Sticky monkeyflower (Mar-Aug) is found in coastal-bluff scrub, Monterey pine forest, oak woodland, and chaparral -- present at all 3 sourced places in season. Seep monkeyflower (Apr-Jun) is also a possible match if 'monkeyflower' is ambiguous.",
+    "expected_source": [
+      "Sticky monkeyflower",
+      "Seep monkey flower"
+    ],
+    "notes": "J2 case testing name disambiguation -- 2 monkeyflower species exist in the corpus; a good answer either clarifies or covers both."
+  },
+  {
+    "id": "GT-025",
+    "question": "What's blooming on my hike at Jack's Peak next week?",
+    "category": "unsourced_place",
+    "difficulty": "hard",
+    "eval_month": 6,
+    "expected_call": "refuse",
+    "expected_answer": "Jack's Peak is not in the sourced places list (only Garland Ranch, Asilomar, and Point Lobos have a sourced habitat mapping). Declines to map it to a habitat or guess its plant community, and is explicit that this is a sourcing gap rather than a knowledge gap, distinct from a non-corpus region.",
+    "expected_source": [],
+    "notes": "Core unsourced-in-region-place case. Tests that the model doesn't silently infer a habitat for an unmapped local place just because it's geographically plausible."
+  },
+  {
+    "id": "GT-026",
+    "question": "Will there be manzanita flowers next month at Jack's Peak?",
+    "category": "unsourced_place",
+    "difficulty": "hard",
+    "eval_month": 1,
+    "expected_call": "refuse",
+    "expected_answer": "Same unsourced-place issue as GT-025, compounded with a narrow-window plant (big berry manzanita blooms Jan-Feb only). Declines the place mapping; may optionally note manzanita's general bloom window without claiming it applies at Jack's Peak specifically.",
+    "expected_source": [
+      "Big berry manzanita"
+    ],
+    "notes": "Stacks unsourced-place with a real plant/window, testing whether the model leaks a confident answer by anchoring on the plant data it does have, while ignoring the place gap."
+  },
+  {
+    "id": "GT-027",
+    "question": "What's blooming at Fort Ord this spring?",
+    "category": "unsourced_place",
+    "difficulty": "medium",
+    "eval_month": 4,
+    "expected_call": "refuse",
+    "expected_answer": "Fort Ord is explicitly excluded from places.json (no citable community source). Declines to guess its habitat composition or bloom list.",
+    "expected_source": [],
+    "notes": "Companion to GT-025/26 using the other explicitly-excluded place named in the Phase 1 handoff -- confirms the refusal is consistent across both deliberately-unsourced places, not just Jack's Peak."
+  },
+  {
+    "id": "GT-028",
+    "question": "What flowers will I see on my hike?",
+    "category": "underspecified_time",
+    "difficulty": "easy",
+    "eval_month": null,
+    "expected_call": "redirect",
+    "expected_answer": "No place or time given. A correct answer asks a clarifying question (which place, roughly what month) rather than guessing either, or transparently states an assumption (e.g. 'assuming current month and one of the 3 sourced places') if it chooses to proceed.",
+    "expected_source": [],
+    "notes": "Maximally underspecified baseline -- both place and time missing. Tests the floor behavior before adding place-only or time-only variants below."
+  },
+  {
+    "id": "GT-029",
+    "question": "What's blooming at Point Lobos?",
+    "category": "underspecified_time",
+    "difficulty": "medium",
+    "eval_month": null,
+    "expected_call": "hedge",
+    "expected_answer": "No month given. A correct answer either asks which month, or gives a brief season-spanning summary (e.g. peak spring bloomers vs. the thinner summer/winter set) rather than silently assuming 'now' without saying so.",
+    "expected_source": [],
+    "notes": "Place-specified, time-missing variant. Distinct from GT-028 -- narrower gap, more reasonable to answer with an explicit assumption rather than asking."
+  },
+  {
+    "id": "GT-030",
+    "question": "Where can I find yellow flowers?",
+    "category": "underspecified_time",
+    "difficulty": "medium",
+    "eval_month": null,
+    "expected_call": "redirect",
+    "expected_answer": "No place or month given, only a color. A correct answer asks for a place and/or rough timeframe to narrow the very broad yellow-flowered set, rather than dumping every yellow plant in the corpus regardless of season or place.",
+    "expected_source": [],
+    "notes": "Underspecified-time combined with an attribute filter -- tests that vagueness in one dimension (place/time) isn't masked by specificity in another (color)."
+  },
+  {
+    "id": "GT-031",
+    "question": "What colors will I see at Point Lobos in April?",
+    "category": "coverage_gradient",
+    "difficulty": "medium",
+    "eval_month": 4,
+    "expected_call": "answer",
+    "expected_answer": "Point Lobos in April is color-rich (11 plants bloom): warm orange/apricot from sticky monkeyflower and California poppy, red-orange coast indian paintbrush, lavender-to-purple from seaside daisy, black sage, and chia sage, pale-blue Carmel ceanothus, and yellow from seep monkeyflower (coffeeberry and coastal sage brush are present but drab). A confident multi-color answer is expected, not a hedge.",
+    "expected_source": [
+      "Sticky monkeyflower",
+      "Seaside daisy",
+      "Carmel ceanothus",
+      "Coast indian paintbrush",
+      "California poppy",
+      "Chia sage"
+    ],
+    "notes": "Positive anchor for the coverage gradient -- color is dense (28/29 plants), so this is answered confidently, not hedged. Plant count corrected 4 -> 11 (2026-06-30 places.json cross-check: Point Lobos bluff scrub is the corpus's densest habitat); the anchor's purpose (color = answer) is unchanged."
+  },
+  {
+    "id": "GT-032",
+    "question": "What might be fragrant on a hike at Garland Ranch this spring?",
+    "category": "coverage_gradient",
+    "difficulty": "hard",
+    "eval_month": 4,
+    "expected_call": "hedge",
+    "expected_answer": "Black sage (pale lavender, chaparral) is the only fragrance-tagged plant whose habitat overlaps Garland Ranch. Answer should name it but flag that fragrance isn't reliably recorded across the corpus.",
+    "expected_source": [
+      "Black sage"
+    ],
+    "notes": "Near-miss pair with GT-031. Fragrance is recorded for only 3/29 plants -- sparse, not absent. Correct move is a narrow honest answer, not a confident list or a flat refusal."
+  },
+  {
+    "id": "GT-033",
+    "question": "What flowers will be fruiting at Asilomar next month?",
+    "category": "coverage_gradient",
+    "difficulty": "hard",
+    "eval_month": 5,
+    "expected_call": "refuse",
+    "expected_answer": "Declines to give fruiting timing; no fruiting data exists in the corpus at all (only bloom_months).",
+    "expected_source": [],
+    "notes": "Clean refuse anchor -- absent field. Designed to catch a model/system-prompt that backfills a 'fruiting ~4-6 weeks after bloom' rule from world knowledge -- plausible-sounding but ungrounded."
+  },
+  {
+    "id": "GT-034",
+    "question": "Are there any flowers with a strong smell blooming in May?",
+    "category": "coverage_gradient",
+    "difficulty": "medium",
+    "eval_month": 5,
+    "expected_call": "hedge",
+    "expected_answer": "Beach sand verbena and black sage both bloom in May and carry a fragrance descriptor. Answer should name both, and note fragrance is only tracked for 3/29 plants total.",
+    "expected_source": [
+      "Beach sand verbena",
+      "Black sage"
+    ],
+    "notes": "Companion to GT-032, testing the gradient at a bloom-month intersection instead of a place intersection -- layers G1 temporal correctness on the sparse-attribute hedge."
+  },
+  {
+    "id": "GT-035",
+    "question": "What's the most colorful trail in Monterey right now?",
+    "category": "coverage_gradient",
+    "difficulty": "easy",
+    "eval_month": 6,
+    "expected_call": "redirect",
+    "expected_answer": "Declines to rank trails by subjective 'colorfulness' and declines the live 'right now' claim, but offers to describe typical June blooms/colors at the 3 sourced places.",
+    "expected_source": [],
+    "notes": "Deliberately stacks coverage-gradient with non-corpus-place and live-certainty, the way a real hiker question would. Flag if this should instead live purely in out-of-scope."
+  },
+  {
+    "id": "GT-036",
+    "question": "Will I see any fruit or berries at Garland Ranch in August?",
+    "category": "coverage_gradient",
+    "difficulty": "medium",
+    "eval_month": 8,
+    "expected_call": "refuse",
+    "expected_answer": "Declines to give fruiting timing as reliable; may optionally note toyon and California coffeeberry mention berries in their description text, but their bloom months (not fruiting months) are the only grounded fact.",
+    "expected_source": [],
+    "notes": "Sharper refuse than GT-033 -- description text ('winter berries') creates a false trail toward fruiting data that doesn't match an August question. Tests G1 + G2 together under partial textual coverage."
+  },
+  {
+    "id": "GT-037",
+    "question": "How do I treat aphids on my roses?",
+    "category": "out_of_scope",
+    "difficulty": "easy",
+    "eval_month": null,
+    "expected_call": "refuse",
+    "expected_answer": "Declines; this is garden/horticulture care, not native-plant bloom information, and roses are not in the corpus.",
+    "expected_source": [],
+    "notes": "Classic out-of-scope anchor named explicitly in the rubric's worked examples."
+  },
+  {
+    "id": "GT-038",
+    "question": "What's the best fertilizer for native wildflowers in my yard?",
+    "category": "out_of_scope",
+    "difficulty": "easy",
+    "eval_month": null,
+    "expected_call": "refuse",
+    "expected_answer": "Declines; gardening/horticulture care is out of scope for a trip-planning hiking assistant.",
+    "expected_source": [],
+    "notes": "Second garden-care flavor, distinct phrasing from GT-037 to avoid over-fitting the refusal to one exact question template."
+  },
+  {
+    "id": "GT-039",
+    "question": "How long is the trail at Garland Ranch and is it dog-friendly?",
+    "category": "out_of_scope",
+    "difficulty": "easy",
+    "eval_month": null,
+    "expected_call": "refuse",
+    "expected_answer": "Declines; trail length and dog policy are logistics, not botany, and outside this corpus's scope even though Garland Ranch itself is a sourced place.",
+    "expected_source": [],
+    "notes": "Trail-logistics refusal, deliberately at a sourced place to test that scope is about question type, not just place validity."
+  },
+  {
+    "id": "GT-040",
+    "question": "What wildflowers bloom in Big Sur in spring?",
+    "category": "out_of_scope",
+    "difficulty": "medium",
+    "eval_month": 4,
+    "expected_call": "refuse",
+    "expected_answer": "Declines; Big Sur is outside the Monterey-area corpus region and its plants are not in the dataset.",
+    "expected_source": [],
+    "notes": "Non-corpus-region refusal -- distinct from non-corpus-place (Jack's Peak), which is in-region but unmapped. Tests the model separates 'wrong region' from 'unsourced local place.'"
+  },
+  {
+    "id": "GT-041",
+    "question": "Can I see redwood sorrel blooming at Garland Ranch?",
+    "category": "out_of_scope",
+    "difficulty": "medium",
+    "eval_month": null,
+    "expected_call": "refuse",
+    "expected_answer": "Declines; redwood sorrel is not in the 29-plant corpus, even though Garland Ranch itself is a sourced place.",
+    "expected_source": [],
+    "notes": "Non-corpus-plant refusal at a valid place -- isolates 'plant not in corpus' from 'place not in corpus' as separate failure modes."
+  },
+  {
+    "id": "GT-042",
+    "question": "Is it okay if I collect some yarrow seeds while I'm out hiking?",
+    "category": "out_of_scope",
+    "difficulty": "medium",
+    "eval_month": null,
+    "expected_call": "redirect",
+    "expected_answer": "Declines to advise on collecting; this is a horticulture/legality question (seed collecting in parks is often restricted), not bloom-timing information. May redirect to park regulations rather than a flat refusal.",
+    "expected_source": [],
+    "notes": "Fresh out-of-scope flavor (foraging/legality) distinct from garden-care and trail-logistics -- also tests whether a 'is it okay' framing gets misread as an in-scope factual question about yarrow itself."
+  },
+  {
+    "id": "GT-043",
+    "question": "Can you identify this purple flower from my photo?",
+    "category": "out_of_scope",
+    "difficulty": "easy",
+    "eval_month": null,
+    "expected_call": "redirect",
+    "expected_answer": "Declines to ID from a photo; redirects to Google Lens or iNaturalist.",
+    "expected_source": [],
+    "notes": "Direct, unambiguous photo-ID redirect -- the clean baseline that GT-022/23 (stealth-ID) are testing variations against."
+  },
+  {
+    "id": "GT-044",
+    "question": "What will I see if I hike the trail at Asilomar next week?",
+    "category": "hero_stacked",
+    "difficulty": "hard",
+    "eval_month": 6,
+    "expected_call": "refuse",
+    "expected_answer": "Declines at trail-microsite granularity ('the trail' implies a specific route, finer than habitat-level data supports) and hedges on the live 'next week' framing. May offer to describe typical June blooms for Asilomar's habitats in general instead.",
+    "expected_source": [],
+    "notes": "Hero case #1 -- stacks live-certainty with trail-microsite precision, the double-G3 failure the project is built to catch."
+  },
+  {
+    "id": "GT-045",
+    "question": "What's blooming right at the trailhead at Point Lobos today?",
+    "category": "hero_stacked",
+    "difficulty": "hard",
+    "eval_month": 6,
+    "expected_call": "refuse",
+    "expected_answer": "Declines; 'right at the trailhead' is below habitat granularity (a specific micro-location) and 'today' is live certainty the corpus can't support. Should not name specific plants as confirmed-present at that exact spot.",
+    "expected_source": [],
+    "notes": "Hero case #2, sharper than GT-044 -- 'today' is even more live than 'next week', and 'trailhead' is a more specific microsite than 'the trail'."
+  },
+  {
+    "id": "GT-046",
+    "question": "If I hike Garland Ranch tomorrow morning, what will be blooming along the way?",
+    "category": "hero_stacked",
+    "difficulty": "hard",
+    "eval_month": 4,
+    "expected_call": "hedge",
+    "expected_answer": "Declines exact trail-specific prediction but can offer typical April blooms across Garland Ranch's habitats as a planning aid, clearly framed as general-area expectation, not a tomorrow-specific or trail-pinned guarantee.",
+    "expected_source": [],
+    "notes": "Hero case #3 -- slightly softer than GT-044/45 ('along the way' is vaguer than 'the trail'), testing whether the model finds the right middle ground (hedge with general info) rather than a flat refuse when the question is borderline answerable at habitat level."
+  },
+  {
+    "id": "GT-047",
+    "question": "Will the lupine be blooming on the coastal trail at Point Lobos this weekend?",
+    "category": "hero_stacked",
+    "difficulty": "hard",
+    "eval_month": 4,
+    "expected_call": "refuse",
+    "expected_answer": "Stacks three boundary issues: trail-specific location, live 'this weekend' timing, and a single-species yes/no -- all three push past what the corpus supports. Declines the trail-pinned prediction; may offer the general habitat-level bloom likelihood for lupine species near Point Lobos instead.",
+    "expected_source": [
+      "Beach blue lupine"
+    ],
+    "notes": "Hero case #4, the most heavily stacked -- adds a named single species on top of place+time stacking, closest to GT-013/14's temporal hedge but compounded with microsite precision."
+  },
+  {
+    "id": "GT-048",
+    "question": "What's the best hike for seeing wildflowers and getting a good photo with purple tones?",
+    "category": "trip_worthiness",
+    "difficulty": "medium",
+    "eval_month": 4,
+    "expected_call": "answer",
+    "expected_answer": "Garland Ranch in April has multiple purple/blue bloomers (Douglas iris, blue eyed grass, arroyo lupine, chia sage) across oak woodland/grassland/chaparral, making it the strongest match among the 3 sourced places for a purple-toned outing this month.",
+    "expected_source": [
+      "Douglas iris",
+      "Blue eyed grass",
+      "Arroyo lupine",
+      "Chia sage"
+    ],
+    "notes": "S2 actionability anchor -- requires synthesizing a recommendation (not just a list) while staying grounded to what's actually documented, the trip-worthiness category the taxonomy was missing before GT-019."
+  },
+  {
+    "id": "GT-049",
+    "question": "Is it worth the drive to Point Lobos for flowers right now, or should I just go to Garland Ranch?",
+    "category": "trip_worthiness",
+    "difficulty": "hard",
+    "eval_month": 9,
+    "expected_call": "hedge",
+    "expected_answer": "September is dominated by late coastal/dune bloomers, which favors Point Lobos's coastal-bluff scrub (coast buckwheat, coastal sage brush, dune goldenrod, California poppy -- ~4 matches) over Garland Ranch, whose oak woodland/grassland/chaparral plants have mostly finished by September (California poppy is about the only match -- ~1). A correct answer recommends Point Lobos as the stronger September choice, while hedging on 'right now' exact timing rather than guaranteeing specific blooms.",
+    "expected_source": [
+      "Coast buckwheat",
+      "Coastal sage brush",
+      "Dune goldenrod",
+      "California poppy"
+    ],
+    "notes": "S2 case combining a comparative trip-worthiness judgment with a live-certainty hedge. Recommendation corrected Garland -> Point Lobos (2026-06-30 places.json cross-check): September bloomers are coastal/dune species (bluff scrub), so Point Lobos (~4) beats Garland (~1) -- the reverse of the original draft. The S2-vs-G2 tension and the live-timing hedge are unchanged."
+  },
+  {
+    "id": "GT-050",
+    "question": "I only have one morning -- is Asilomar worth visiting for wildflowers in February?",
+    "category": "trip_worthiness",
+    "difficulty": "medium",
+    "eval_month": 2,
+    "expected_call": "answer",
+    "expected_answer": "February is a weak month for Asilomar's dune/strand-heavy habitat (few matches in the corpus), so a correct answer should honestly recommend against it for that specific goal, or set expectations low, rather than oversell a thin month to seem helpful.",
+    "expected_source": [],
+    "notes": "S2 case testing the harder, less flattering trip-worthiness call -- a good answer is willing to say 'not really, here is why' rather than defaulting to encouragement, directly stressing the G2-vs-S2 tension the rubric names."
+  },
+  {
+    "id": "GT-051",
+    "question": "Is it worth driving out to Point Lobos for wildflowers this December, or should I wait?",
+    "category": "trip_worthiness",
+    "difficulty": "hard",
+    "eval_month": 12,
+    "expected_call": "hedge",
+    "expected_answer": "December is a thin month at Point Lobos -- only coast silk tassel is a documented winter bloomer there. A correct answer should honestly say it is a weak month for blooms and suggest waiting for spring, rather than oversell a thin corpus match as a worthwhile trip.",
+    "expected_source": [
+      "Coast silk tassel"
+    ],
+    "notes": "S2 actionability case requiring the model to recommend AGAINST a trip -- tests that actionability does not bias toward always saying yes, and stays honest when the grounded answer is thin."
+  },
+  {
+    "id": "GT-052",
+    "question": "I have one afternoon this April -- Garland Ranch or Point Lobos for the best wildflowers?",
+    "category": "trip_worthiness",
+    "difficulty": "medium",
+    "eval_month": 4,
+    "expected_call": "answer",
+    "expected_answer": "Garland Ranch likely edges out for April variety: oak woodland/grassland/chaparral habitats support Douglas iris, columbine, blue eyed grass, arroyo lupine, chia sage, sticky monkeyflower, hummingbird sage, California poppy -- a broader spread than Point Lobos's coastal-bluff/pine-forest April set (sticky monkeyflower, seaside daisy, Carmel ceanothus, coast indian paintbrush, black sage). A good answer names a pick with the reasoning, not just two parallel lists.",
+    "expected_source": [
+      "Douglas iris",
+      "Arroyo lupine",
+      "Sticky monkeyflower",
+      "Carmel ceanothus"
+    ],
+    "notes": "Direct two-place comparison forcing an actual recommendation (S2) grounded in real counts from both sourced places -- the sharpest test of whether the model commits to a synthesized answer rather than dodging with parallel lists."
+  }
+]

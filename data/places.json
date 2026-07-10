@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Garland Ranch Regional Park",
+    "aka": ["Garland Ranch", "Garland Park"],
+    "habitat": ["oak woodland", "Monterey pine forest", "riparian", "grassland", "chaparral"],
+    "attested_communities": "Coast live oak woodland, Monterey pine forest, riparian vegetation along the Carmel River, grassland (high grassland near La Mesa). (Also redwood, Monterey cypress, and non-native eucalyptus — outside Trailside's 7-habitat vocab.)",
+    "source": "https://en.wikipedia.org/wiki/Garland_Ranch_Regional_Park",
+    "confidence": "high",
+    "note": "The first four mapped habitats are explicitly named in the source.",
+    "curator_note": "chaparral added by curator override (2026-06-30): chamise/manzanita chaparral occurs on Garland's drier upper slopes but is not named in the Wikipedia source. Flagged per Phase 1 provenance policy (never edit silently)."
+  },
+  {
+    "name": "Asilomar State Beach",
+    "aka": ["Asilomar", "Asilomar dunes"],
+    "habitat": ["coastal dune/strand", "coastal-bluff scrub", "Monterey pine forest"],
+    "attested_communities": "Rocky coast and dune habitat on the Monterey Peninsula; a trail running through the dunes; adjacent forest.",
+    "source": "https://en.wikipedia.org/wiki/Asilomar_State_Beach",
+    "confidence": "medium",
+    "note": "Dune/strand and forest are directly attested; 'coastal-bluff scrub' is mapped from the source's 'rocky coast' habitat and is a reasonable but inferred call."
+  },
+  {
+    "name": "Point Lobos State Natural Reserve",
+    "aka": ["Point Lobos", "Pt Lobos", "the headlands"],
+    "habitat": ["coastal-bluff scrub", "Monterey pine forest"],
+    "attested_communities": "Cypress-covered headlands (one of only two native Monterey cypress stands), wildflowers, rich coastal flora.",
+    "source": "https://en.wikipedia.org/wiki/Point_Lobos",
+    "confidence": "medium",
+    "note": "Forest (Monterey cypress/pine headlands) and a coastal setting are attested; the specific 'coastal-bluff scrub' community is inferred from the coastal headland description. 'the headlands' is treated as an alias for Point Lobos."
+  }
+]
