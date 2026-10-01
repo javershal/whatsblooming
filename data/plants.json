@@ -141,6 +141,23 @@
     "photo_attribution": "2022 Irene Rosen"
   },
   {
+    "common_name": "American bird's foot trefoil",
+    "scientific_name": "Acmispon americanus",
+    "family": "FABACEAE",
+    "growth_habit": "Annual herb",
+    "native": true,
+    "bloom_months": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=12131",
+    "calscape_url": "https://calscape.org/plant/Acmispon-americanus-(American-bird's-foot-trefoil)/",
+    "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/89108192/small.jpg",
+    "photo_attribution": "catchang"
+  },
+  {
     "common_name": "American brooklime",
     "scientific_name": "Veronica americana",
     "family": "PLANTAGINACEAE",
@@ -760,6 +777,21 @@
     "photo_attribution": "2017 Steve Matson"
   },
   {
+    "common_name": "Blazing star",
+    "scientific_name": "Mentzelia gracilenta",
+    "family": "LOASACEAE",
+    "growth_habit": "Annual herb",
+    "native": true,
+    "bloom_months": [
+      4,
+      5
+    ],
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=5425",
+    "calscape_url": "https://calscape.org/plant/Mentzelia-gracilenta-(Blazing-star)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/io/205/th/io61700-0.jpg",
+    "photo_attribution": "2022 Mary Conway"
+  },
+  {
     "common_name": "Blow wives",
     "scientific_name": "Achyrachaena mollis",
     "family": "ASTERACEAE",
@@ -1296,8 +1328,8 @@
     ],
     "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=1313",
     "calscape_url": "https://calscape.org/plant/Calochortus-venustus-(Butterfly-mariposa-lily)/",
-    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/247/th/74369.jpg",
-    "photo_attribution": "2014 Steve Matson"
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/1017/th/a305197.jpg",
+    "photo_attribution": "2026 Drew Kerr"
   },
   {
     "common_name": "Butterweed",
@@ -1347,8 +1379,8 @@
     ],
     "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=14950",
     "calscape_url": "https://calscape.org/plant/Blitum-californicum-(California-Blite)/",
-    "photo_url": null,
-    "photo_attribution": null
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/953/th/286084.jpg",
+    "photo_attribution": "2026 R.A. Chasey"
   },
   {
     "common_name": "California Milkwort",
@@ -1524,19 +1556,22 @@
   },
   {
     "common_name": "California buckwheat",
-    "scientific_name": "Eriogonum fasciculatum var. foliolosum",
+    "scientific_name": "Eriogonum fasciculatum",
     "family": "POLYGONACEAE",
     "growth_habit": "Shrub",
     "native": true,
     "bloom_months": [
+      4,
+      5,
       6,
       7,
-      8
+      8,
+      9
     ],
-    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=3246",
-    "calscape_url": "https://calscape.org/plant/Eriogonum-fasciculatum-var.-foliolosum-(California-buckwheat)/",
-    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/468/th/140680.jpg",
-    "photo_attribution": "2016 Michael Mitchell"
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=3243",
+    "calscape_url": "https://calscape.org/plant/Eriogonum-fasciculatum-(California-buckwheat)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/464/th/139395.jpg",
+    "photo_attribution": "2022 Steve Matson"
   },
   {
     "common_name": "California bulrush",
@@ -1602,7 +1637,7 @@
     ],
     "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=10960",
     "calscape_url": "https://calscape.org/plant/Logfia-filaginoides-(California-cottonrose)/",
-    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/210/th/63114.jpg",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/210/th/63115.jpg",
     "photo_attribution": "2019 Steve Matson"
   },
   {
@@ -1782,6 +1817,21 @@
     "photo_attribution": "2020 R.A. Chasey"
   },
   {
+    "common_name": "California leopard lily",
+    "scientific_name": "Lilium pardalinum",
+    "family": "LILIACEAE",
+    "growth_habit": "Perennial herb",
+    "native": true,
+    "bloom_months": [
+      6,
+      7
+    ],
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=4809",
+    "calscape_url": "https://calscape.org/plant/Lilium-pardalinum-(California-leopard-lily)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/183/th/54977.jpg",
+    "photo_attribution": "2019 Steve Matson"
+  },
+  {
     "common_name": "California man-root",
     "scientific_name": "Marah fabacea",
     "family": "CUCURBITACEAE",
@@ -1866,7 +1916,7 @@
   {
     "common_name": "California orach",
     "scientific_name": "Extriplex californica",
-    "family": "CHENOPODIACEAE",
+    "family": "AMARANTHACEAE",
     "growth_habit": "Perennial herb",
     "native": true,
     "bloom_months": [
@@ -2053,21 +2103,6 @@
     "calscape_url": "https://calscape.org/plant/Platanus-racemosa-(California-sycamore)/",
     "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/78/th/23442.jpg",
     "photo_attribution": "2015 Diane Etchison"
-  },
-  {
-    "common_name": "California tiger lily",
-    "scientific_name": "Lilium pardalinum",
-    "family": "LILIACEAE",
-    "growth_habit": "Perennial herb",
-    "native": true,
-    "bloom_months": [
-      6,
-      7
-    ],
-    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=4809",
-    "calscape_url": "https://calscape.org/plant/Lilium-pardalinum-(California-tiger-lily)/",
-    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/252/th/75669.jpg",
-    "photo_attribution": "2011 Steve Matson"
   },
   {
     "common_name": "California wax myrtle",
@@ -2291,6 +2326,22 @@
     "photo_attribution": "2019 Steve Matson"
   },
   {
+    "common_name": "Chaparral Orchid",
+    "scientific_name": "Platanthera elongata",
+    "family": "ORCHIDACEAE",
+    "growth_habit": "Perennial herb",
+    "native": true,
+    "bloom_months": [
+      5,
+      6,
+      7
+    ],
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=14975",
+    "calscape_url": "https://calscape.org/plant/Platanthera-elongata-(Chaparral-Orchid)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/982/th/a294805.jpg",
+    "photo_attribution": "2026 Alan Bade"
+  },
+  {
     "common_name": "Chaparral broomrape",
     "scientific_name": "Aphyllon tuberosum",
     "family": "OROBANCHACEAE",
@@ -2355,7 +2406,7 @@
   },
   {
     "common_name": "Chaparral pea",
-    "scientific_name": "Pickeringia montana var. montana",
+    "scientific_name": "Pickeringia montana",
     "family": "FABACEAE",
     "growth_habit": "Shrub",
     "native": true,
@@ -2365,10 +2416,10 @@
       7,
       8
     ],
-    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=6497",
-    "calscape_url": "https://calscape.org/plant/Pickeringia-montana-var.-montana-(Chaparral-pea)/",
-    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/io/213/th/io63976-3.jpg",
-    "photo_attribution": "2022 Ron Vanderhoff"
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=6496",
+    "calscape_url": "https://calscape.org/plant/Pickeringia-montana-(Chaparral-pea)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/72/th/21738.jpg",
+    "photo_attribution": "2019 Stacie Wolny"
   },
   {
     "common_name": "Chaparral sand verbena",
@@ -3041,8 +3092,8 @@
     ],
     "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=430",
     "calscape_url": "https://calscape.org/plant/Aquilegia-formosa-(Columbine)/",
-    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/472/th/141604.jpg",
-    "photo_attribution": "2022 Charles Russell"
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/1028/th/a308607.jpg",
+    "photo_attribution": "2026 Nathan J Taylor"
   },
   {
     "common_name": "Common buttercup",
@@ -3298,8 +3349,8 @@
     ],
     "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=1334",
     "calscape_url": "https://calscape.org/plant/Calyptridium-monandrum-(Common-pussypaws)/",
-    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/102/th/30899.jpg",
-    "photo_attribution": "2019 Stacie Wolny"
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/942/th/282856.jpg",
+    "photo_attribution": "2026 Nathan J Taylor"
   },
   {
     "common_name": "Common rupertia",
@@ -4209,7 +4260,7 @@
   },
   {
     "common_name": "Dwarf sack clover",
-    "scientific_name": "Trifolium depauperatum var. truncatum",
+    "scientific_name": "Trifolium depauperatum",
     "family": "FABACEAE",
     "growth_habit": "Annual herb",
     "native": true,
@@ -4219,10 +4270,10 @@
       4,
       5
     ],
-    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=8071",
-    "calscape_url": "https://calscape.org/plant/Trifolium-depauperatum-var.-truncatum-(Dwarf-sack-clover)/",
-    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/292/th/87622.jpg",
-    "photo_attribution": "2021 Ron Vanderhoff"
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=8067",
+    "calscape_url": "https://calscape.org/plant/Trifolium-depauperatum-(Dwarf-sack-clover)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/327/th/98289.jpg",
+    "photo_attribution": "2021 Steve Matson"
   },
   {
     "common_name": "Eastwood manzanita",
@@ -4257,23 +4308,6 @@
     "photo_attribution": "2021 Mike Russler"
   },
   {
-    "common_name": "Elegant piperia",
-    "scientific_name": "Piperia elegans ssp. elegans",
-    "family": "ORCHIDACEAE",
-    "growth_habit": "Perennial herb",
-    "native": true,
-    "bloom_months": [
-      7,
-      8,
-      9,
-      10
-    ],
-    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=8857",
-    "calscape_url": "https://calscape.org/plant/Piperia-elegans-ssp.-elegans-(Elegant-piperia)/",
-    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/67/th/20389.jpg",
-    "photo_attribution": "2018 Saskia Raether"
-  },
-  {
     "common_name": "Elegant silverpuffs",
     "scientific_name": "Microseris elegans",
     "family": "ASTERACEAE",
@@ -4289,6 +4323,18 @@
     "photo_attribution": "2024 Dianne Lake"
   },
   {
+    "common_name": "Erythranthe grandis",
+    "scientific_name": "Erythranthe grandis",
+    "family": "PHRYMACEAE",
+    "growth_habit": "Perennial",
+    "native": true,
+    "bloom_months": [],
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=13560",
+    "calscape_url": "https://calscape.org/plant/Erythranthe-grandis-(Erythranthe-grandis)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/448/th/134628.jpg",
+    "photo_attribution": "2022 Charles Russell"
+  },
+  {
     "common_name": "Eucladium verticillatum",
     "scientific_name": "Eucladium verticillatum",
     "family": "POTTIACEAE",
@@ -4302,18 +4348,20 @@
   },
   {
     "common_name": "Evening primrose",
-    "scientific_name": "Oenothera elata ssp. hookeri",
+    "scientific_name": "Oenothera elata",
     "family": "ONAGRACEAE",
     "growth_habit": "Perennial herb",
     "native": true,
     "bloom_months": [
+      6,
+      7,
       8,
       9
     ],
-    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=5897",
-    "calscape_url": "https://calscape.org/plant/Oenothera-elata-ssp.-hookeri-(Evening-primrose)/",
-    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/214/th/64468.jpg",
-    "photo_attribution": "2020 Suzanne L. Weakley"
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=5895",
+    "calscape_url": "https://calscape.org/plant/Oenothera-elata-(Evening-primrose)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/171/th/51507.jpg",
+    "photo_attribution": "2020 Ron Vanderhoff"
   },
   {
     "common_name": "Evergreen buckthorn",
@@ -4434,6 +4482,22 @@
     "calscape_url": "https://calscape.org/plant/Gamochaeta-ustulata-(Featherweed)/",
     "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/73/th/22021.jpg",
     "photo_attribution": "2019 Gary McDonald"
+  },
+  {
+    "common_name": "Feathery false lily of the valley",
+    "scientific_name": "Maianthemum racemosum ssp. amplexicaule",
+    "family": "RUSCACEAE",
+    "growth_habit": "Perennial herb",
+    "native": true,
+    "bloom_months": [
+      5,
+      6,
+      7
+    ],
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=10097",
+    "calscape_url": "https://calscape.org/plant/Maianthemum-racemosum-ssp.-amplexicaule-(Feathery-false-lily-of-the-valley)/",
+    "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/294578450/small.jpg",
+    "photo_attribution": "2023 aparrot1"
   },
   {
     "common_name": "Fendler's meadow rue",
@@ -4941,8 +5005,8 @@
     ],
     "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=10679",
     "calscape_url": "https://calscape.org/plant/Rumex-fueginus-(Golden-dock)/",
-    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/445/th/133612.jpg",
-    "photo_attribution": "2022 Steve Ashcraft"
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/io/636/th/aio191064-0.jpg",
+    "photo_attribution": "2026 Ron Vanderhoff"
   },
   {
     "common_name": "Golden fleece",
@@ -5149,6 +5213,22 @@
     "photo_attribution": "2023 Chris wagner"
   },
   {
+    "common_name": "Grinnell's beardtongue",
+    "scientific_name": "Penstemon grinnellii var. scrophularioides",
+    "family": "PLANTAGINACEAE",
+    "growth_habit": "Perennial herb",
+    "native": true,
+    "bloom_months": [
+      5,
+      6,
+      7
+    ],
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=6171",
+    "calscape_url": "https://calscape.org/plant/Penstemon-grinnellii-var.-scrophularioides-(Grinnell's-beardtongue)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/io/161/th/io48391-0.jpg",
+    "photo_attribution": "2021 Dee Shea Himes"
+  },
+  {
     "common_name": "Gumplant",
     "scientific_name": "Grindelia stricta var. platyphylla",
     "family": "ASTERACEAE",
@@ -5179,7 +5259,8 @@
       6,
       7,
       8,
-      9
+      9,
+      10
     ],
     "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=5291",
     "calscape_url": "https://calscape.org/plant/Madia-gracilis-(Gumweed)/",
@@ -5505,8 +5586,8 @@
     ],
     "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=10900",
     "calscape_url": "https://calscape.org/plant/Frangula-californica-ssp.-tomentella-(Hoary-coffeeberry)/",
-    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/io/164/th/io49353-1.jpg",
-    "photo_attribution": "2021 Cynthia Powell"
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/952/th/285872.jpg",
+    "photo_attribution": "2026 Alaine Arslan"
   },
   {
     "common_name": "Hoary nettle",
@@ -5522,8 +5603,8 @@
     ],
     "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=14911",
     "calscape_url": "https://calscape.org/plant/Urtica-gracilis-ssp.-holosericea-(Hoary-nettle)/",
-    "photo_url": null,
-    "photo_attribution": null
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/mg/848/th/mg254547-1.jpg",
+    "photo_attribution": "2024 Emily R. Allen"
   },
   {
     "common_name": "Hog fennel",
@@ -5868,6 +5949,21 @@
     "calscape_url": "https://calscape.org/plant/Isothecium-cristatum-(Isothecium-cristatum)/",
     "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/251/th/75461.jpg",
     "photo_attribution": "2020 Diana Wahl"
+  },
+  {
+    "common_name": "Jepson's morning glory",
+    "scientific_name": "Calystegia malacophylla ssp. pedicellata",
+    "family": "CONVOLVULACEAE",
+    "growth_habit": "Perennial herb",
+    "native": true,
+    "bloom_months": [
+      7,
+      8
+    ],
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=1364",
+    "calscape_url": "https://calscape.org/plant/Calystegia-malacophylla-ssp.-pedicellata-(Jepson's-morning-glory)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/mg/442/th/mg132606-1.jpg",
+    "photo_attribution": "2021 R.A. Chasey"
   },
   {
     "common_name": "Jim brush",
@@ -6298,7 +6394,7 @@
     ],
     "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=3946",
     "calscape_url": "https://calscape.org/plant/Gnaphalium-palustre-(Lowland-cudweed)/",
-    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/107/th/32174.jpg?a",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/107/th/32173.jpg?a",
     "photo_attribution": "2019 Ron Vanderhoff"
   },
   {
@@ -6396,6 +6492,22 @@
     "photo_attribution": "2024 Ron Vanderhoff"
   },
   {
+    "common_name": "Many stemmed gilia",
+    "scientific_name": "Gilia achilleifolia ssp. multicaulis",
+    "family": "POLEMONIACEAE",
+    "growth_habit": "Annual herb",
+    "native": true,
+    "bloom_months": [
+      2,
+      3,
+      4
+    ],
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=3814",
+    "calscape_url": "https://calscape.org/plant/Gilia-achilleifolia-ssp.-multicaulis-(Many-stemmed-gilia)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/952/th/285701.jpg",
+    "photo_attribution": "2026 Nathan J Taylor"
+  },
+  {
     "common_name": "Maritime plantain",
     "scientific_name": "Plantago maritima",
     "family": "PLANTAGINACEAE",
@@ -6420,9 +6532,11 @@
     "growth_habit": "Perennial herb (hemiparasitic)",
     "native": true,
     "bloom_months": [
-      4,
       5,
-      6
+      6,
+      7,
+      8,
+      9
     ],
     "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=1679",
     "calscape_url": "https://calscape.org/plant/Castilleja-applegatei-ssp.-martinii-(Martin's-paintbrush)/",
@@ -6431,7 +6545,7 @@
   },
   {
     "common_name": "Meadow barley",
-    "scientific_name": "Hordeum brachyantherum ssp. californicum",
+    "scientific_name": "Hordeum brachyantherum",
     "family": "POACEAE",
     "growth_habit": "Perennial grass",
     "native": true,
@@ -6440,10 +6554,10 @@
       6,
       7
     ],
-    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=4220",
-    "calscape_url": "https://calscape.org/plant/Hordeum-brachyantherum-ssp.-californicum-(Meadow-barley)/",
-    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/io/164/th/io49358-0.jpg",
-    "photo_attribution": "2021 Cynthia Powell"
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=4218",
+    "calscape_url": "https://calscape.org/plant/Hordeum-brachyantherum-(Meadow-barley)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/193/th/58191.jpg",
+    "photo_attribution": "2015 Steve Matson"
   },
   {
     "common_name": "Meadow chickweed",
@@ -6658,6 +6772,31 @@
     "photo_attribution": "2003 Steve Matson"
   },
   {
+    "common_name": "Mule fat",
+    "scientific_name": "Baccharis salicifolia",
+    "family": "ASTERACEAE",
+    "growth_habit": "Shrub",
+    "native": true,
+    "bloom_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=1035",
+    "calscape_url": "https://calscape.org/plant/Baccharis-salicifolia-(Mule-fat)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/491/th/147585.jpg",
+    "photo_attribution": "2023 Julia Markey"
+  },
+  {
     "common_name": "Naked broom rape",
     "scientific_name": "Aphyllon purpureum",
     "family": "OROBANCHACEAE",
@@ -6706,6 +6845,24 @@
     "calscape_url": "https://calscape.org/plant/Bromus-laevipes-(Narrow-flowered-brome)/",
     "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/162/th/48799.jpg",
     "photo_attribution": "2020 Alice Cummings"
+  },
+  {
+    "common_name": "Narrow leaved bedstraw",
+    "scientific_name": "Galium angustifolium",
+    "family": "RUBIACEAE",
+    "growth_habit": "Perennial herb",
+    "native": true,
+    "bloom_months": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=3660",
+    "calscape_url": "https://calscape.org/plant/Galium-angustifolium-(Narrow-leaved-bedstraw)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/355/th/106567.jpg",
+    "photo_attribution": "2014 Steve Matson"
   },
   {
     "common_name": "Narrow leaved lacepod",
@@ -6921,8 +7078,8 @@
     ],
     "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=11088",
     "calscape_url": "https://calscape.org/plant/Solidago-velutina-ssp.-californica-(Oreja-de-liebre)/",
-    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/214/th/64229.jpg",
-    "photo_attribution": "2013 Steve Matson"
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/io/548/th/io164612-0.jpg",
+    "photo_attribution": "2025 Ron Vanderhoff"
   },
   {
     "common_name": "Oso berry",
@@ -7070,6 +7227,21 @@
     "calscape_url": "https://calscape.org/plant/Trifolium-depauperatum-var.-amplectens-(Pale-sack-clover)/",
     "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/53/th/15983.jpg",
     "photo_attribution": "2018 David Greenberger"
+  },
+  {
+    "common_name": "Palmer's oak",
+    "scientific_name": "Quercus palmeri",
+    "family": "FAGACEAE",
+    "growth_habit": "Shrub",
+    "native": true,
+    "bloom_months": [
+      4,
+      5
+    ],
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=7002",
+    "calscape_url": "https://calscape.org/plant/Quercus-palmeri-(Palmer's-oak)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/920/276086.jpg",
+    "photo_attribution": "2025 Morgan Stickrod"
   },
   {
     "common_name": "Pearly everlasting",
@@ -7270,6 +7442,23 @@
     "photo_attribution": "2020 Janice Kuch"
   },
   {
+    "common_name": "Platanthera elegans ssp. elegans",
+    "scientific_name": "Platanthera elegans ssp. elegans",
+    "family": "ORCHIDACEAE",
+    "growth_habit": "Perennial herb",
+    "native": true,
+    "bloom_months": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=14974",
+    "calscape_url": "https://calscape.org/plant/Platanthera-elegans-ssp.-elegans-(Platanthera-elegans-ssp.-elegans)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/739/th/221839.jpg",
+    "photo_attribution": "2024 Kyle Suchy"
+  },
+  {
     "common_name": "Plectritis",
     "scientific_name": "Plectritis macrocera",
     "family": "VALERIANACEAE",
@@ -7326,7 +7515,7 @@
     ],
     "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=7331",
     "calscape_url": "https://calscape.org/plant/Sanicula-bipinnata-(Poison-sanicle)/",
-    "photo_url": "http://calphotos.berkeley.edu/imgs/512x768/0000_0000/0513/1390.jpeg",
+    "photo_url": "https://calphotos.berkeley.edu/imgs/512x768/0000_0000/0513/1390.jpeg",
     "photo_attribution": "2013 Gary McDonald"
   },
   {
@@ -7701,6 +7890,22 @@
     "photo_attribution": "2003 Steve Matson"
   },
   {
+    "common_name": "Red stemmed spring beauty",
+    "scientific_name": "Claytonia rubra",
+    "family": "MONTIACEAE",
+    "growth_habit": "Annual herb",
+    "native": true,
+    "bloom_months": [
+      2,
+      3,
+      4
+    ],
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=2247",
+    "calscape_url": "https://calscape.org/plant/Claytonia-rubra-(Red-stemmed-spring-beauty)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/292/th/87739.jpg",
+    "photo_attribution": "2003 Steve Matson"
+  },
+  {
     "common_name": "Redberry",
     "scientific_name": "Rhamnus crocea",
     "family": "RHAMNACEAE",
@@ -7712,8 +7917,8 @@
     ],
     "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=7075",
     "calscape_url": "https://calscape.org/plant/Rhamnus-crocea-(Redberry)/",
-    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/469/th/140852.jpg",
-    "photo_attribution": "2011 Michael Mitchell"
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/io/594/th/io178352-0.jpg",
+    "photo_attribution": "2026 Ron Vanderhoff"
   },
   {
     "common_name": "Redwood sorrel",
@@ -8122,8 +8327,8 @@
     ],
     "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=1501",
     "calscape_url": "https://calscape.org/plant/Cardionema-ramosissimum-(Sand-mat)/",
-    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/io/281/th/io84359-1.jpg",
-    "photo_attribution": "2023 Ron Vanderhoff"
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/948/th/284450.jpg",
+    "photo_attribution": "2026 Nathan J Taylor"
   },
   {
     "common_name": "Sand pygmy weed",
@@ -8351,7 +8556,7 @@
   {
     "common_name": "Sea scale",
     "scientific_name": "Atriplex leucophylla",
-    "family": "CHENOPODIACEAE",
+    "family": "AMARANTHACEAE",
     "growth_habit": "Perennial herb",
     "native": true,
     "bloom_months": [
@@ -8431,7 +8636,7 @@
     ],
     "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=11723",
     "calscape_url": "https://calscape.org/plant/Heliotropium-curassavicum-var.-oculatum-(Seaside-heliotrope)/",
-    "photo_url": "http://calphotos.berkeley.edu/imgs/512x768/0000_0000/0812/0171.jpeg",
+    "photo_url": "https://calphotos.berkeley.edu/imgs/512x768/0000_0000/0812/0171.jpeg",
     "photo_attribution": "2012 Gary McDonald"
   },
   {
@@ -8609,6 +8814,22 @@
     "calscape_url": "https://calscape.org/plant/Uropappus-lindleyi-(Silver-puffs)/",
     "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/mg/21/th/6530.jpg",
     "photo_attribution": "2016 Ron Vanderhoff"
+  },
+  {
+    "common_name": "Silver weed cinquefoil",
+    "scientific_name": "Potentilla anserina",
+    "family": "ROSACEAE",
+    "growth_habit": "Perennial herb",
+    "native": true,
+    "bloom_months": [
+      3,
+      4,
+      5
+    ],
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=6826",
+    "calscape_url": "https://calscape.org/plant/Potentilla-anserina-(Silver-weed-cinquefoil)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/gp/26/th/5203.jpg",
+    "photo_attribution": "2015 James Gonsman"
   },
   {
     "common_name": "Silverweed",
@@ -8991,8 +9212,8 @@
     ],
     "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=4031",
     "calscape_url": "https://calscape.org/plant/Helenium-puberulum-(Sneezeweed)/",
-    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/io/184/th/io55412-0.jpg",
-    "photo_attribution": "2021 Mike Russler"
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/1016/th/a304856.jpg",
+    "photo_attribution": "2026 Nathan J Taylor"
   },
   {
     "common_name": "Snowberry",
@@ -9127,6 +9348,23 @@
     "photo_attribution": "2023 Ron Vanderhoff"
   },
   {
+    "common_name": "Splendid gilia",
+    "scientific_name": "Saltugilia splendens",
+    "family": "POLEMONIACEAE",
+    "growth_habit": "Annual herb",
+    "native": true,
+    "bloom_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=11069",
+    "calscape_url": "https://calscape.org/plant/Saltugilia-splendens-(Splendid-gilia)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/950/th/285168.jpg",
+    "photo_attribution": "2026 Mike Russler"
+  },
+  {
     "common_name": "Splendid mariposa",
     "scientific_name": "Calochortus splendens",
     "family": "LILIACEAE",
@@ -9141,6 +9379,23 @@
     "calscape_url": "https://calscape.org/plant/Calochortus-splendens-(Splendid-mariposa)/",
     "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/839/th/251780.jpg",
     "photo_attribution": "2025 David Koontz"
+  },
+  {
+    "common_name": "Spotted eucrypta",
+    "scientific_name": "Eucrypta chrysanthemifolia",
+    "family": "HYDROPHYLLACEAE",
+    "growth_habit": "Annual herb",
+    "native": true,
+    "bloom_months": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=3543",
+    "calscape_url": "https://calscape.org/plant/Eucrypta-chrysanthemifolia-(Spotted-eucrypta)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/240/th/72066.jpg",
+    "photo_attribution": "2014 Steve Matson"
   },
   {
     "common_name": "Spreading gooseberry",
@@ -9359,7 +9614,7 @@
   },
   {
     "common_name": "Stipulate lotus",
-    "scientific_name": "Hosackia stipularis var. stipularis",
+    "scientific_name": "Hosackia stipularis",
     "family": "FABACEAE",
     "growth_habit": "Perennial herb",
     "native": true,
@@ -9368,10 +9623,10 @@
       5,
       6
     ],
-    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=11760",
-    "calscape_url": "https://calscape.org/plant/Hosackia-stipularis-var.-stipularis-(Stipulate-lotus)/",
-    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/io/201/th/io60525-1.jpg",
-    "photo_attribution": "2022 Mary Conway"
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=11758",
+    "calscape_url": "https://calscape.org/plant/Hosackia-stipularis-(Stipulate-lotus)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/619/th/185816.jpg",
+    "photo_attribution": "2023 Jamie Spielmann"
   },
   {
     "common_name": "Stream orchid",
@@ -9386,8 +9641,8 @@
     ],
     "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=3020",
     "calscape_url": "https://calscape.org/plant/Epipactis-gigantea-(Stream-orchid)/",
-    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/716/th/215002.jpg",
-    "photo_attribution": "2024 Mary Ann Machi"
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/1016/th/a304879.jpg",
+    "photo_attribution": "2026 Nathan J Taylor"
   },
   {
     "common_name": "Strigose lotus",
@@ -9652,6 +9907,22 @@
     "photo_attribution": "2023 Ron Vanderhoff"
   },
   {
+    "common_name": "Threenerve goldenrod",
+    "scientific_name": "Solidago velutina",
+    "family": "ASTERACEAE",
+    "growth_habit": "Perennial herb",
+    "native": true,
+    "bloom_months": [
+      8,
+      9,
+      10
+    ],
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=11089",
+    "calscape_url": "https://calscape.org/plant/Solidago-velutina-(Threenerve-goldenrod)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/214/th/64232.jpg",
+    "photo_attribution": "2013 Steve Matson"
+  },
+  {
     "common_name": "Thrift seapink",
     "scientific_name": "Armeria maritima",
     "family": "PLUMBAGINACEAE",
@@ -9862,8 +10133,8 @@
     ],
     "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=2056",
     "calscape_url": "https://calscape.org/plant/Chorizanthe-staticoides-(Turkish-rugging)/",
-    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/91/th/27352.jpg",
-    "photo_attribution": "2019 Ron Vanderhoff"
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/997/th/a299392.jpg",
+    "photo_attribution": "2026 David Strauch"
   },
   {
     "common_name": "Two-color rabbit-tobacco",
@@ -10161,8 +10432,8 @@
     ],
     "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=5881",
     "calscape_url": "https://calscape.org/plant/Oenanthe-sarmentosa-(Water-parsley)/",
-    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/345/th/103798.jpg",
-    "photo_attribution": "2021 Don Hollander"
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/1016/th/a304904.jpg",
+    "photo_attribution": "2026 Nathan J Taylor"
   },
   {
     "common_name": "Water smartweed",
@@ -10423,8 +10694,8 @@
     ],
     "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=2139",
     "calscape_url": "https://calscape.org/plant/Cirsium-occidentale-(Western-thistle)/",
-    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/202/th/60740.jpg",
-    "photo_attribution": "2011 Steve Matson"
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/1026/th/a307829.jpg",
+    "photo_attribution": "2026 Cat Chang"
   },
   {
     "common_name": "Western vervain",
@@ -10474,6 +10745,22 @@
     "calscape_url": "https://calscape.org/plant/Claopodium-whippleanum-(Whipple's-claopodium-moss)/",
     "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/777/th/233338.jpg",
     "photo_attribution": "2024 Jordan Collins"
+  },
+  {
+    "common_name": "Whiskerbrush",
+    "scientific_name": "Leptosiphon ciliatus",
+    "family": "POLEMONIACEAE",
+    "growth_habit": "Annual herb",
+    "native": true,
+    "bloom_months": [
+      4,
+      5,
+      6
+    ],
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=10056",
+    "calscape_url": "https://calscape.org/plant/Leptosiphon-ciliatus-(Whiskerbrush)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/io/231/th/io69427-0.jpg",
+    "photo_attribution": "2022 Mike Russler"
   },
   {
     "common_name": "Whispering bells",
@@ -10825,6 +11112,21 @@
     "photo_attribution": "2023 Julia Markey"
   },
   {
+    "common_name": "Wood rose",
+    "scientific_name": "Rosa gymnocarpa var. gymnocarpa",
+    "family": "ROSACEAE",
+    "growth_habit": "Shrub",
+    "native": true,
+    "bloom_months": [
+      5,
+      6
+    ],
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=11989",
+    "calscape_url": "https://calscape.org/plant/Rosa-gymnocarpa-var.-gymnocarpa-(Wood-rose)/",
+    "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/354/th/106349.jpg",
+    "photo_attribution": "2017 Steve Matson"
+  },
+  {
     "common_name": "Woodland clarkia",
     "scientific_name": "Clarkia unguiculata",
     "family": "ONAGRACEAE",
@@ -10955,6 +11257,23 @@
     "calscape_url": "https://calscape.org/plant/Pseudognaphalium-microcephalum-(Wright's-cudweed)/",
     "photo_url": "https://d2yo0ezu2b1v2y.cloudfront.net/images/app/up/entry/175/th/52777.jpg",
     "photo_attribution": "2020 Ron Vanderhoff"
+  },
+  {
+    "common_name": "Yadon's rein-orchid",
+    "scientific_name": "Platanthera yadonii",
+    "family": "ORCHIDACEAE",
+    "growth_habit": "Perennial herb",
+    "native": true,
+    "bloom_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "calflora_url": "https://www.calflora.org/cgi-bin/species_query.cgi?where-calrecnum=14980",
+    "calscape_url": "https://calscape.org/plant/Platanthera-yadonii-(Yadon's-rein-orchid)/",
+    "photo_url": null,
+    "photo_attribution": null
   },
   {
     "common_name": "Yarrow",
